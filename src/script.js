@@ -18,6 +18,8 @@ function loaded() {
     });
     $('.iScrollIndicator').css('display', 'none');
 
+    var x = "Total Width: " + screen.width + "px";
+    document.getElementById("demo").innerHTML = x;
     //  myScroll.scrollToElement(document.querySelector('#scrolling-menu-wrapper li:nth-child(1)'), null, null, true)
 }
 
