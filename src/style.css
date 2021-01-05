@@ -134,7 +134,7 @@ sarı #decf46
     width: 100%;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 768px) {
     /* For mobile phones: */
     [class*="col-"] {
         width: 100%;
