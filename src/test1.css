@@ -273,11 +273,12 @@ a {
 }
 
 #scrolling-menu-wrapper ul li {
+    box-sizing: border-box;
     display: block;
     float: left;
     width: 200px;
     height: 200px;
-    /* border-right: 1px solid #ccc; */
+    border: 5px solid rgb(104, 234, 64);
     background: white;
     font-size: 14px;
     margin: 0;
