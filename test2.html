@@ -17,7 +17,7 @@
         var myGamePiece;
 
         function startGame() {
-            myGamePiece = new component(30, 30, "smiley.gif", 10, 120, "image");
+            myGamePiece = new component(30, 30, "https://www.w3schools.com/graphics/smiley.gif", 10, 120, "image");
             myGameArea.start();
         }
 
@@ -76,7 +76,7 @@
         }
 
         function move(dir) {
-            myGamePiece.image.src = "angry.gif";
+            myGamePiece.image.src = "https://www.w3schools.com/graphics/angry.gif";
             if (dir == "up") {
                 myGamePiece.speedY = -1;
             }
@@ -92,7 +92,7 @@
         }
 
         function clearmove() {
-            myGamePiece.image.src = "smiley.gif";
+            myGamePiece.image.src = "https://www.w3schools.com/graphics/smiley.gif";
             myGamePiece.speedX = 0;
             myGamePiece.speedY = 0;
         }
