@@ -117,7 +117,7 @@
 
             resize: function() {
 
-                var min = min(window.innerHeight, window.innerWidth);
+                var min = Math.min(window.innerHeight, window.innerWidth);
 
                 POP.currentHeight = min;
                 // resize the width in proportion
