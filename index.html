@@ -1,222 +1,116 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DODO KIT</title>
-    <script src="./src/jquery.js"></script>
-    <script src="./src/scroll.js"></script>
-    <script src="./src/script.js"></script>
-    <script src="./src/fawesome.js"></script>
-    <link rel="stylesheet" href="./src/style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="keywords" content="web game, oyun, game online, oyun online, online, online games, games, free, html, html5, css, css3, javascript, jquery" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="rivalzka">
+
+
+    <title>DO-DO</title>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="src/scroll.js"></script>
+    <script src="src/script.js"></script>
+
+    <link rel="stylesheet" href="src/fawesome.css">
+    <link rel="stylesheet" href="src/style.css">
 </head>
 
-<body onload="loaded()">
-    <!-- <div class="body"> -->
-    <div class="body">
-        <div class="row ">
-            <div class="col-12 header ">
-                <!-- <div class="row"> -->
-                <!-- <h1 class="col-3">DODO</h1> -->
-                <i id="demo" class="col-3"></i>
-                <h1 class="col-6">DODO</h1>
-                <i class="fas fa-gamepad col-3 "></i>
-                <!-- <h1 class="col-3">DODO</h1> -->
-                <!-- </div> -->
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 menu">
-                <ul>
-                    <li>The City</li>
-                    <li>The Island</li>
-                </ul>
-            </div>
-        </div>
-        <div class="row ">
-            <div id="scrolling-menu-wrapper">
-
-                <div id="scroller">
-
-                    <ul>
-                        <li class="level number-0 button" data="0">
-                            <a class="tileLink" href="#">
-                                <article class="tile">
-                                    <figure>
-                                        <img src="http://assets1.ignimgs.com/2016/10/17/battlefield11280jpg-fe1c05_1280w.jpg" alt="Fighters facing off" />
-                                        <figcaption>
-                                            <h2>Quickmatch</h2>
-                                            The quickest way to get into any of the game modes.
-                                        </figcaption>
-                                    </figure>
-                                </article>
-                            </a>
-                        </li>
-                        <li class="level number-1 button" data="1">
-                            <a class="tileLink" href="#">
-                                <article class="tile">
-                                    <figure>
-                                        <img src="http://assets1.ignimgs.com/2016/10/17/battlefield11280jpg-fe1c05_1280w.jpg" alt="Fighters facing off" />
-                                        <figcaption>
-                                            <h2>Quickmatch</h2>
-                                            The quickest way to get into any of the game modes.
-                                        </figcaption>
-                                    </figure>
-                                </article>
-                            </a>
-                        </li>
-                        <li class="level number-2 button" data="2">
-                            <a class="tileLink" href="#">
-                                <article class="tile">
-                                    <figure>
-                                        <img src="http://assets1.ignimgs.com/2016/10/17/battlefield11280jpg-fe1c05_1280w.jpg" alt="Fighters facing off" />
-                                        <figcaption>
-                                            <h2>Quickmatch</h2>
-                                            The quickest way to get into any of the game modes.
-                                        </figcaption>
-                                    </figure>
-                                </article>
-                            </a>
-                        </li>
-                        <li class="level number-3 button" data="3">
-                            <a class="tileLink" href="#">
-                                <article class="tile">
-                                    <figure>
-                                        <img src="http://assets1.ignimgs.com/2016/10/17/battlefield11280jpg-fe1c05_1280w.jpg" alt="Fighters facing off" />
-                                        <figcaption>
-                                            <h2>Quickmatch</h2>
-                                            The quickest way to get into any of the game modes.
-                                        </figcaption>
-                                    </figure>
-                                </article>
-                            </a>
-                        </li>
-                        <li class="level number-4 button" data="4">
-                            <a class="tileLink" href="#">
-                                <article class="tile">
-                                    <figure>
-                                        <img src="http://assets1.ignimgs.com/2016/10/17/battlefield11280jpg-fe1c05_1280w.jpg" alt="Fighters facing off" />
-                                        <figcaption>
-                                            <h2>Quickmatch</h2>
-                                            The quickest way to get into any of the game modes.
-                                        </figcaption>
-                                    </figure>
-                                </article>
-                            </a>
-                        </li>
-                        <li class="level number-5 button" data="5">
-                            <a class="tileLink" href="#">
-                                <article class="tile">
-                                    <figure>
-                                        <img src="http://assets1.ignimgs.com/2016/10/17/battlefield11280jpg-fe1c05_1280w.jpg" alt="Fighters facing off" />
-                                        <figcaption>
-                                            <h2>Quickmatch</h2>
-                                            The quickest way to get into any of the game modes.
-                                        </figcaption>
-                                    </figure>
-                                </article>
-                            </a>
-                        </li>
-                        <li class="level number-6 button" data="6">
-                            <a class="tileLink" href="#">
-                                <article class="tile">
-                                    <figure>
-                                        <img src="http://assets1.ignimgs.com/2016/10/17/battlefield11280jpg-fe1c05_1280w.jpg" alt="Fighters facing off" />
-                                        <figcaption>
-                                            <h2>Quickmatch</h2>
-                                            The quickest way to get into any of the game modes.
-                                        </figcaption>
-                                    </figure>
-                                </article>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3 menu">
-                <ul>
-                    <li>The City</li>
-                    <li>The Island</li>
-                    <li>The Food</li>
-                    <li>The Flight</li>
-                    <li>The City</li>
-                    <li>The Island</li>
-                    <li>The Food</li>
-                    <li>The Flight</li>
-                    <li>The City</li>
-                    <li>The Island</li>
-                    <li>The Food</li>
-                </ul>
-            </div>
-            <div class="col-6 menu">
-                <ul>
-                    <li>The Flight</li>
-                    <li>The City</li>
-                    <li>The Island</li>
-                    <li>The Food</li>
-                    <li>The Flight</li>
-                    <li>The City</li>
-                    <li>The Island</li>
-                    <li>The Food</li>
-                    <li>The Flight</li>
-                    <li>The City</li>
-                    <li>The Island</li>
-                    <li>The Food</li>
-                </ul>
-            </div>
-            <div class="col-3 menu">
-                <ul>
-                    <li>The Flight</li>
-                    <li>The City</li>
-                    <li>The Island</li>
-                    <li>The Food</li>
-                    <li>The Flight</li>
-                    <li>The City</li>
-                    <li>The Island</li>
-                    <li>The Food</li>
-                    <li>The Flight</li>
-                    <li>The City</li>
-                    <li>The Island</li>
-                    <li>The Food</li>
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 menu">
-                <ul>
-                    <li>The Flight</li>
-                    <li>The City</li>
-                    <li>The Island</li>
-                    <li>The Food</li>
-                    <li>The Flight</li>
-                    <li>The City</li>
-                    <li>The Island</li>
-                    <li>The Food</li>
-                    <li>The Flight</li>
-                    <li>The City</li>
-                    <li>The Island</li>
-                    <li>The Food</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<body class="back-img" onload="loaded()">
     <div class="row">
+        <div id="scrolling-menu-wrapper">
 
+            <div id="scroller">
+
+                <ul>
+
+                    <li class="level number-0 button" data="0">
+                        <span class="tile-content">
+						<span class="number">1</span>
+                        <h2>Lorem</h2>
+                        </span>
+                    </li>
+
+
+                    <li class="level number-1 button" data="1">
+                        <span class="tile-content">
+						<span class="number">2</span>
+                        <h2>Ipsum</h2>
+                        </span>
+                    </li>
+
+
+                    <li class="level number-2 button" data="2">
+                        <span class="tile-content">
+						<span class="number">3</span>
+                        <h2>Dolor</h2>
+                        </span>
+                    </li>
+
+
+                    <li class="level number-3 button" data="3">
+                        <span class="tile-content">
+						<span class="number">4</span>
+                        <h2>Sit</h2>
+                        </span>
+                    </li>
+
+
+                    <li class="level number-4 button" data="4">
+                        <span class="tile-content">
+						<span class="number">5</span>
+                        <h2>Amet</h2>
+                        </span>
+                    </li>
+
+                    <li class="level number-5 button" data="5">
+                        <span class="tile-content">
+						<span class="number">6</span>
+                        <h2>Consectetur</h2>
+                        </span>
+                    </li>
+
+
+                    <li class="level number-6 button" data="6">
+                        <span class="tile-content">
+						<span class="number">7</span>
+                        <h2>Adipisicing</h2>
+                        </span>
+                    </li>
+
+
+                    <li class="level number-7 button" data="7">
+                        <span class="tile-content">
+						<span class="number">8</span>
+                        <h2>Elit</h2>
+                        </span>
+                    </li>
+
+
+                    <li class="level number-8 button" data="8">
+                        <span class="tile-content">
+						<span class="number">9</span>
+                        <h2>Reprehenderit</h2>
+                        </span>
+                    </li>
+
+                    <li class="level number-9 button" data="9">
+                        <span class="tile-content">
+						<span class="number">10</span>
+                        <h2>Suscipit</h2>
+                        </span>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
 
     </div>
-
-
-
 </body>
 
 </html>
-
-
-
-
-
-
-<!-- 
-  -->
