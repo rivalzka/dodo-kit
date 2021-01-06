@@ -1,5 +1,7 @@
 var myScroll;
 
+
+
 function loaded() {
     myScroll = new IScroll('#scrolling-menu-wrapper', {
         scrollX: true,
