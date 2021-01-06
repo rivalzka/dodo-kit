@@ -23,3 +23,7 @@ function loaded() {
 document.addEventListener('touchmove', function(e) {
     e.preventDefault();
 }, false);
+
+function PacmanOpen() {
+    window.open("games/pacman/index.html", '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');
+}
