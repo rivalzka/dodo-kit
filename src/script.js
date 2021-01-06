@@ -25,5 +25,5 @@ document.addEventListener('touchmove', function(e) {
 }, false);
 
 function PacmanOpen() {
-    window.open("games/pacman/index.html", '_blank', 'location=yes,height=650,width=600,scrollbars=yes,status=yes');
+    window.open("games/pacman/pacman.html", '_blank', 'location=yes,height=650,width=600,scrollbars=yes,status=yes');
 }
