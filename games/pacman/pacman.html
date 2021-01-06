@@ -117,7 +117,9 @@
 
             resize: function() {
 
-                POP.currentHeight = window.innerHeight;
+                var min = min(window.innerHeight, window.innerWidth);
+
+                POP.currentHeight = min;
                 // resize the width in proportion
                 // to the new height
                 POP.currentWidth = POP.currentHeight * POP.RATIO;
@@ -126,7 +128,7 @@
                 // page, allowing us to scroll past
                 // the address bar, thus hiding it.
                 if (POP.android || POP.ios) {
-                    document.body.style.height = (window.innerHeight + 50) + 'px';
+                    document.body.style.height = (min + 50) + 'px';
                 }
 
                 // set the new canvas style width and height
