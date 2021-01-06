@@ -129,7 +129,7 @@ ul {
     top: 0;
     bottom: 0;
     left: 0;
-    margin: auto;
+    /* margin: auto; */
     height: 280px;
     width: 10%;
     padding: 0;
@@ -179,6 +179,11 @@ a {
 
 .line-trough {
     text-decoration: line-through;
+}
+
+.page .gamebar {
+    position: relative;
+    margin-top: calc(100vh - 290px - 144px);
 }
 
 .page .icon {
