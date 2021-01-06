@@ -29,3 +29,7 @@ document.addEventListener('touchmove', function(e) {
 function PacmanOpen() {
     window.open("games/pacman/pacman.html", '_blank', 'location=yes,height=650,width=600,scrollbars=yes,status=yes');
 }
+
+function DrumkitOpen() {
+    window.open("games/drumkit/drumkit.html", '_blank', 'location=yes,height=650,width=600,scrollbars=yes,status=yes');
+}
