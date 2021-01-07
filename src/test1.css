@@ -191,7 +191,7 @@ a {
 
 .page .gamebar {
     position: relative;
-    margin-top: calc(100vh - 290px - 144px);
+    /* margin-top: calc(100vh - 290px - 144px); */
 }
 
 .page .icon {
@@ -200,7 +200,7 @@ a {
     bottom: 0;
     right: 10%;
     left: 0;
-    width: 270px;
+    width: min(270px, calc(100%));
     height: auto;
     margin: auto;
     text-align: center;
@@ -235,6 +235,15 @@ a {
     -moz-transform: translateX(0) !important;
     -o-transform: translateX(0) !important;
     transition-delay: 1s;
+}
+
+.prevent-click {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #scrolling-menu-wrapper {
@@ -286,7 +295,7 @@ a {
     float: left;
     width: 200px;
     height: 200px;
-    border: 5px solid rgb(104, 234, 64);
+    /* border: 5px solid rgb(104, 234, 64); */
     background: white;
     font-size: 14px;
     margin: 0;
@@ -303,6 +312,10 @@ a {
 
 #scrolling-menu-wrapper ul li:hover .related-category-posts {
     display: block;
+}
+
+#scrolling-menu-wrapper ul li:hover .related-category-posts:hover {
+    cursor: pointer;
 }
 
 #scrolling-menu-wrapper ul li:hover {
@@ -354,14 +367,52 @@ a {
     background-image: url("../assets/images/waterglass.PNG");
 }
 
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 .row {
     margin: 20px 30px 20px calc(10% + 30px);
+    max-height: calc(100% - 100px);
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .row::after {
     content: "";
     clear: both;
     display: table;
+}
+
+.row-i {
+    margin: 20px calc(10% + 30px) 20px 30px;
+    max-height: calc(100% - 50px);
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 [class*="col-"] {
@@ -377,7 +428,7 @@ a {
     background-color: red;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 500px) {
     /* For tablets: */
     .col-s-1 {
         width: 8.33%;
@@ -454,5 +505,96 @@ a {
     }
     .col-12 {
         width: 100%;
+    }
+}
+
+.boxa {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: #111845a6;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgb(23, 32, 90);
+    border: 2px solid #2a3cad;
+    color: white;
+    padding: 20px;
+}
+
+.boxa:before {
+    content: '';
+    position: relative;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.boxa:hover:before {
+    left: -50%;
+    transform: skewX(-5deg);
+}
+
+.boxa .spani {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    box-sizing: border-box;
+}
+
+.boxa:hover .spani {
+    display: block;
+}
+
+.boxa .spani:nth-child(1) {
+    transform: rotate(0deg);
+}
+
+.boxa .spani:nth-child(2) {
+    transform: rotate(90deg);
+}
+
+.boxa .spani:nth-child(3) {
+    transform: rotate(180deg);
+}
+
+.boxa .spani:nth-child(4) {
+    transform: rotate(270deg);
+}
+
+.boxa .spani:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #50dfdb;
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+    50% {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+    50.1% {
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+    100% {
+        transform: scaleX(0);
+        transform-origin: right;
     }
 }

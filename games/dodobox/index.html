@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="keywords" content="web game, oyun, game online, oyun online, online, online games, games, free, html, html5, css, css3, javascript, jquery" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="rivalzka">
+
+
+    <title>{{ title }}</title>
+
+    <script src="../../src/jquery.js"></script>
+    <style>
+        /* game css */
+        
+        body {
+            position: absolute;
+            max-width: 100vw;
+            max-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background: #303a21;
+            display: flex;
+            justify-content: center;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <div id="banner" onclick="start()">
+        <div id="message">YENİ OYUN</div>
+        <div class="new-game">Başlamak için boşluk tuşuna basınız</div>
+    </div>
+    <div id="dodobox" class="board">
+        <div class="game-board" id="game">
+            <!-- <div class="deep">
+                </div> -->
+        </div>
+
+        <div class="score-board">
+            <div class="labels">En Yüksek Puan</div>
+            <div class="frame" id="bestscore">0 </div>
+            <div class="labels">Puan</div>
+            <div class="frame" id="score">0 </div>
+            <div class="labels">Seviye </div>
+            <div class="frame" id="level">0 </div>
+        </div>
+        <!-- <div class="fire">
+            <div class="fire-left">
+                <div class="particle-fire"></div>
+            </div>
+            <div class="fire-main">
+                <div class="particle-fire"></div>
+            </div>
+            <div class="fire-right">
+                <div class="particle-fire"></div>
+            </div>
+            <div class="fire-bottom">
+                <div class="particle-fire"></div>
+            </div>
+        </div> -->
+
+        <div id="menu" class="">
+            <ul>
+                <li class="triangle"></li>
+                <li class="triangle"></li>
+                <li class="triangle"></li>
+                <li class="triangle"></li>
+                <li class="triangle"></li>
+                <li class="triangle"></li>
+                <li class="triangle"></li>
+                <li class="triangle"></li>
+                <li class="triangle"></li>
+                <li class="triangle"></li>
+                <li class="triangle"></li>
+                <li class="triangle"></li>
+                <li class="triangle"></li>
+                <li class="triangle"></li>
+                <li class="triangle"></li>
+            </ul>
+        </div>
+    </div>
+
+    <style>
+        /* #dodobox {
+            /* left: calc(50%); */
+        /* padding: 5%; 
+        }*/
+        
+        #menu {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        
+        #menu>ul {
+            display: flex;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 0;
+        }
+        
+        .triangle {
+            margin-right: min(1vw, 1vh);
+            text-decoration: none;
+            list-style: none;
+            width: min(5.7vw, 5.7vh);
+            height: min(20vh, 20vw);
+            background: linear-gradient(to right bottom, transparent 50%, #303a21 45%);
+        }
+        
+        .board {
+            position: relative;
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .game-board {
+            display: inline-block;
+            width: min(calc(80vw - 30px), calc(80vh - 30px));
+            height: min(calc(90vh - 20px), calc(90vw - 20px));
+            margin-right: 10px;
+            background-color: #c4d6a7;
+            position: relative;
+        }
+        
+        .score-board {
+            /* width: 150px;
+            height: 600px; */
+            display: inline-block;
+            width: min(calc(20vw), calc(20vh));
+            height: min(calc(90vh - 20px), calc(90vw - 20px));
+            background-color: #c4d6a7;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #banner {
+            position: absolute;
+            top: min(calc(50vw), calc(50vh));
+            /* left: min(calc(50vw), calc(50vh)); */
+            z-index: 2;
+            transform: translate(-50%, -50%);
+            width: min(20vw, 20vh);
+            background-color: #303a21;
+            color: #c4d6a7;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        #message {
+            background-color: #303a21;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: min(1vh, 1vw);
+            font-size: min(3vh, 3vw);
+        }
+        
+        .new-game {
+            background-color: #303a21;
+            font-weight: 100;
+            -webkit-animation: opanim 2s infinite;
+            animation: opanim 2s infinite;
+            padding: min(0.5vw, 0.5vh);
+            font-size: min(2vh, 2vw);
+        }
+        
+        .box {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            width: min(4vw, 4vh);
+            height: min(4vw, 4vh);
+            font-size: min(2vw, 2vh);
+            border-radius: min(1.5vw, 1.5vh);
+            background-color: #303a21;
+            color: #c4d6a7;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+        
+        .down::before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f358";
+            color: #c4d6a7;
+        }
+        
+        .left::before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f359";
+            color: #c4d6a7;
+        }
+        
+        .right::before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f35a";
+            color: #c4d6a7;
+        }
+        
+        .up::before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f35b";
+            color: #c4d6a7;
+        }
+        
+        .invisible {
+            display: none;
+        }
+        
+        .labels {
+            background-color: #c4d6a7;
+            padding: min(0.4vw, 0.4vh);
+            font-size: min(2vh, 2vw);
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #303a21;
+            word-wrap: break-word;
+            margin-top: min(4vh, 4vw);
+        }
+        
+        .frame {
+            background-color: #c4d6a7;
+            padding: min(0.4vw, 0.4vh);
+            font-size: min(1.8vh, 1.8vw);
+            text-align: center;
+            color: #303a21;
+            border: 2px solid #303a21;
+            border-radius: min(1vw, 1vh);
+            margin: 0 min(0.5vw, 0.5vh);
+        }
+        
+        @keyframes opanim {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes scaleUpDown {
+            0%,
+            100% {
+                transform: scaleY(1) scaleX(1);
+            }
+            50%,
+            90% {
+                transform: scaleY(1.1);
+            }
+            75% {
+                transform: scaleY(0.95);
+            }
+            80% {
+                transform: scaleX(0.95);
+            }
+        }
+        
+        @keyframes shake {
+            0%,
+            100% {
+                transform: skewX(0) scale(1);
+            }
+            50% {
+                transform: skewX(5deg) scale(0.9);
+            }
+        }
+        
+        @keyframes particleUp {
+            0% {
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                top: -100%;
+                transform: scale(0.5);
+            }
+        }
+        
+        @keyframes glow {
+            0%,
+            50% {
+                background-color: #ff7800;
+            }
+            100% {
+                background-color: #ef5a00;
+            }
+        }
+        
+        .fire {
+            position: absolute;
+            top: 80%;
+            left: 40%;
+            width: 100px;
+            height: 70px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgb(83, 38, 38);
+        }
+        
+        .fire-main {
+            position: absolute;
+            height: 95%;
+            width: 100%;
+            background-color: rgb(83, 38, 38);
+            /* background-color: #111;*/
+            /*animation: scaleUpDown 3s ease-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;*/
+        }
+        
+        .fire-main .main-fire {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(farthest-corner at 10px 0, #d43300 0%, #ef5a00 95%);
+            transform: scaleX(0.8) rotate(45deg);
+            border-radius: 0 40% 60% 40%;
+            filter: drop-shadow(0 0 10px #111);
+        }
+        
+        .fire-main .particle-fire {
+            position: absolute;
+            top: 60%;
+            left: 45%;
+            width: 10px;
+            height: 10px;
+            background-color: #111;
+            border-radius: 50%;
+            filter: drop-shadow(0 0 10px #d43322);
+            animation: particleUp 2s ease-out 0;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+        }
+        
+        .fire-right {
+            /*height: 100%;
+        width: 100%;
+        position: absolute;
+        animation: shake 2s ease-out 0;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;*/
+        }
+        
+        .fire-right .main-fire {
+            position: absolute;
+            top: 15%;
+            right: -100%;
+            width: 80%;
+            height: 80%;
+            background-color: #ef5a00;
+            transform: scaleX(0.8) rotate(45deg);
+            border-radius: 0 40% 60% 40%;
+            filter: drop-shadow(0 0 10px #d43322);
+        }
+        
+        .fire-right .particle-fire {
+            position: absolute;
+            top: 45%;
+            right: -70%;
+            width: 15px;
+            height: 15px;
+            background-color: #111;
+            transform: scaleX(0.8) rotate(45deg);
+            border-radius: 50%;
+            filter: drop-shadow(0 0 10px #d43322);
+            animation: particleUp 2s ease-out 0;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+        }
+        
+        .fire-left {
+            /*position: absolute;
+        height: 100%;
+        width: 100%;
+        animation: shake 3s ease-out 0;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;*/
+            /*background-color: #ef5a00;*/
+        }
+        
+        .fire-left .main-fire {
+            position: absolute;
+            top: 15%;
+            left: -100%;
+            width: 80%;
+            height: 80%;
+            background-color: #ef5a00;
+            transform: scaleX(0.8) rotate(45deg);
+            border-radius: 0 40% 60% 40%;
+            filter: drop-shadow(0 0 10px #d43322);
+        }
+        
+        .fire-left .particle-fire {
+            position: absolute;
+            top: 10%;
+            left: -70%;
+            width: 10%;
+            height: 10%;
+            background-color: #111;
+            border-radius: 50%;
+            filter: drop-shadow(0 0 10px #d43322);
+            animation: particleUp 2s ease-out 0;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+        }
+        
+        .fire-bottom .main-fire {
+            position: absolute;
+            top: 30%;
+            left: -200%;
+            width: 75%;
+            height: 75%;
+            background-color: #ff7800;
+            transform: scaleX(0.8) rotate(45deg);
+            border-radius: 0 40% 100% 40%;
+            filter: blur(10px);
+            /*animation: glow 2s ease-out 0;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;*/
+        }
+        
+        .fire-bottom .particle-fire {
+            position: absolute;
+            top: 10%;
+            right: 100%;
+            width: 10%;
+            height: 10%;
+            background-color: #1111;
+            border-radius: 50%;
+            filter: drop-shadow(0 0 10px #d43322);
+            animation: particleUp 2s ease-out 0;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+        }
+    </style>
+
+    <script>
+        window.onkeydown = function(e) {
+            e.preventDefault();
+        }
+        window.onkeyup = function(e) {
+            var key = e.keyCode ? e.keyCode : e.which;
+            console.log("key: " + key);
+            if (key == 87 || key == 119 || key == 38) { //w 
+                if (!game_over) kill_box("up");
+            } else if (key == 65 || key == 97 || key == 37) { //a
+                if (!game_over) kill_box("left");
+            } else if (key == 83 || key == 115 || key == 40) { //s
+                if (!game_over) kill_box("down");
+            } else if (key == 68 || key == 100 || key == 39) { //d
+                if (!game_over) kill_box("right");
+            } else if (key == 32) { //d
+                if (game_over) start();
+            }
+            e.preventDefault();
+        }
+
+        function clear() {
+            list.forEach(function(item, index) {
+                var id = item.id;
+                var thr = item.thr;
+                boom_efect(id);
+                clearInterval(thr);
+            });
+            list = [];
+        }
+
+        function hasClass(element, className) {
+            var class_name = document.getElementById(element).className;
+            console.log("class name: " + class_name + " is contain ? " + className);
+            return (' ' + class_name + ' ').indexOf(' ' + className + ' ') > -1;
+        }
+
+        function kill_box(key) {
+            audio().play("boom");
+            var itemx = undefined;
+            var idx = -1;
+            list.forEach(function(item, index) {
+                // if (item.val == key) {
+                if (hasClass(item.id, key)) {
+                    var id = item.id;
+                    var thr = item.thr;
+                    boom_efect(id);
+                    clearInterval(thr);
+                    create_box();
+                    idx = index;
+                    itemx = item;
+                    console.log("find the box " + key);
+                } else {
+                    itemx = undefined;
+                    console.log("not find the box " + key);
+                }
+            });
+            if (idx > -1) {
+                list.splice(idx, 1);
+            }
+            if (itemx) {
+                var score = Number($("#score").text());
+                score += 10 * level;
+                $("#score").html(score);
+            } else {
+                finish();
+            }
+        }
+
+        function start() {
+            audio().play("start");
+            timer = setInterval(function() {
+                if (level <= level_limit) {
+                    level++;
+                    $("#level").html(level);
+                } else {
+                    clearInterval(timer);
+                }
+            }, 10000);
+            $("#level").html(level);
+            $("#banner").addClass("invisible");
+            $("#score").html("0");
+            create_box();
+            game_over = false;
+        }
+
+        function finish() {
+            audio().play("die");
+            var score = $("#score").text();
+            var bestscore = $("#bestscore").text();
+            if (Number(score) > Number(bestscore)) {
+                $("#bestscore").html(score);
+            }
+            clearInterval(timer);
+            clear();
+            level = 1;
+            game_over = true;
+            $("#message").html("Oyun Bitti");
+            $("#banner").removeClass("invisible");
+        }
+
+        function boom_efect(item_id) {
+            $("#" + item_id).delay(0).hide("explode", {
+                pieces: 120
+            }, 1000);
+        }
+
+        var list_keys = [{
+            key: "W",
+            class: "up"
+        }, {
+            key: "A",
+            class: "down"
+        }, {
+            key: "S",
+            class: "left"
+        }, {
+            key: "D",
+            class: "right"
+        }];
+        var list = [];
+        var box_count = 0;
+        var vel_t = 40;
+        var vel_y = 3;
+        var level = 1;
+        var level_limit = 10;
+        var timer;
+        var game_over = true;
+
+        function create_box() {
+            var id = "box" + box_count;
+            var key = list_keys[Math.floor(Math.random() * 4)].key;
+            var cl = list_keys[Math.floor(Math.random() * 4)].class;
+            $("<div id='" + id + "' class='box " + cl + "'></div>").prependTo("#game");
+            var x = Math.floor(Math.random() * 450);
+
+            $("#box" + box_count).css({
+                top: 0,
+                left: x
+            });
+
+            var interval = setInterval(function() {
+                var y = $("#" + id).position().top;
+                var y2 = $(".deep").position().top - 50;
+                //console.log("y: " + y);
+                if (y > y2) {
+                    clearInterval(interval);
+                    finish();
+                    boom_efect(id);
+                    //$( id ).remove();
+                } else {
+                    y += (vel_y);
+                    $("#" + id).css({
+                        top: y + 'px'
+                    });
+                }
+            }, (vel_t - 3 * level));
+            list[box_count] = {
+                "id": id,
+                "val": key,
+                "thr": interval
+            };
+            box_count++;
+        }
+        var audio_files = [
+            ["start", "../audio/start.wav"],
+            ["die", "../audio/die.wav"],
+            ["boom", "../audio/tık.wav"],
+        ];
+
+        var files = [],
+            endEvents = [],
+            progressEvents = [],
+            playing = [];
+        var audio = function() {
+
+
+
+            function load(name, path, cb) {
+                console.log(name + " : load");
+                files[name] = document.createElement("audio");
+                var f = files[name];
+                // console.log(files[name] + " : ? ");
+
+                progressEvents[name] = function(event) {
+                    progress(event, name, cb);
+                };
+
+                f.addEventListener("canplaythrough", progressEvents[name], true);
+                f.setAttribute("preload", "true");
+                f.setAttribute("autobuffer", "true");
+                f.setAttribute("src", path);
+                f.pause();
+            };
+
+            function progress(event, name, callback) {
+                if (event.loaded === event.total && typeof callback === "function") {
+                    callback();
+                    files[name].removeEventListener("canplaythrough",
+                        progressEvents[name], true);
+                }
+            };
+
+            function disableSound() {
+                for (var i = 0; i < playing.length; i++) {
+                    files[playing[i]].pause();
+                    files[playing[i]].currentTime = 0;
+                }
+                playing = [];
+            };
+
+            function ended(name) {
+
+                var i, tmp = [],
+                    found = false;
+
+                files[name].removeEventListener("ended", endEvents[name], true);
+
+                for (i = 0; i < playing.length; i++) {
+                    if (!found && playing[i]) {
+                        found = true;
+                    } else {
+                        tmp.push(playing[i]);
+                    }
+                }
+                playing = tmp;
+            };
+
+            function play(name) {
+                if (!soundDisabled()) {
+                    //console.log(files[name] + " : ? ");
+                    endEvents[name] = function() {
+                        ended(name);
+                    };
+                    playing.push(name);
+                    files[name].addEventListener("ended", endEvents[name], true);
+                    files[name].play();
+                }
+            };
+
+            function pause() {
+                for (var i = 0; i < playing.length; i++) {
+                    files[playing[i]].pause();
+                }
+            };
+
+            function resume() {
+                for (var i = 0; i < playing.length; i++) {
+                    files[playing[i]].play();
+                }
+            };
+
+            return {
+                "disableSound": disableSound,
+                "load": load,
+                "play": play,
+                "pause": pause,
+                "resume": resume
+            };
+        };
+
+        function load(arr, callback) {
+
+            if (arr.length === 0) {
+                callback();
+            } else {
+                var x = arr.pop();
+                audio().load(x[0], x[1], function() {
+                    load(arr, callback);
+                });
+            }
+        }
+
+
+        function soundDisabled() {
+            return localStorage["soundDisabled"] === "true";
+        };
+
+        window.onload = function() {
+            load(audio_files, function() { /*loaded();*/ });
+        }
+    </script>
+
+
+    <script>
+        // all the code goes here
+        var POP = {
+
+            // set up some initial values
+            WIDTH: 690,
+            HEIGHT: 600,
+            // we'll set the rest of these
+            // in the init function
+            RATIO: null,
+            currentWidth: null,
+            currentHeight: null,
+            canvas: null,
+            ctx: null,
+
+            init: function() {
+
+                // the proportion of width to height
+                POP.RATIO = POP.WIDTH / POP.HEIGHT;
+                // these will change when the screen is resized
+                POP.currentWidth = POP.WIDTH;
+                POP.currentHeight = POP.HEIGHT;
+                // this is our canvas element
+                POP.svg = document.getElementById('dodobox');
+                POP.svg2 = document.getElementById('menu');
+                // setting this is important
+                // otherwise the browser will
+                // default to 320 x 200
+                POP.svg.width = POP.WIDTH;
+                POP.svg.height = POP.HEIGHT;
+                POP.svg2.width = POP.WIDTH;
+                // the canvas context enables us to 
+                // interact with the canvas api
+                //POP.ctx = POP.canvas.getContext('2d');
+
+                // we're ready to resize
+                POP.resize();
+
+
+            },
+
+            resize: function() {
+
+                var min = Math.min(window.innerHeight, window.innerWidth);
+                //var min = window.innerHeight;
+                POP.currentHeight = min;
+                // resize the width in proportion
+                // to the new height
+                POP.currentWidth = POP.currentHeight * POP.RATIO;
+
+                // this will create some extra space on the
+                // page, allowing us to scroll past
+                // the address bar, thus hiding it.
+                if (POP.android || POP.ios) {
+                    document.body.style.height = (min + 50) + 'px';
+                    console.log("mobile");
+                } else {
+                    console.log("desktop");
+                }
+
+                // set the new canvas style width and height
+                // note: our canvas is still 320 x 480, but
+                // we're essentially scaling it with CSS
+                POP.svg2.style.width = POP.currentWidth + 'px';
+                POP.svg.style.width = POP.currentWidth + 'px';
+                POP.svg.style.height = POP.currentHeight + 'px';
+
+                // we use a timeout here because some mobile
+                // browsers don't fire if there is not
+                // a short delay
+                window.setTimeout(function() {
+                    window.scrollTo(0, 1);
+                }, 1);
+            }
+
+
+        };
+        // POP.init();
+        window.addEventListener('load', POP.init, false);
+        window.addEventListener('resize', POP.resize, false);
+    </script>
+</body>
+
+</html>

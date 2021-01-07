@@ -23,10 +23,8 @@
 
     <!-- <script src="../javascripts/script.js"></script> -->
 
-    <div class="body">
-        <div class="container-game-body">
-            <div class="container-game-box centered ">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="300 300 1400 1400">
+
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="300 300 1400 1400">
                 <g id="Drums">
                     <g>
                         <path id="Drum-Shadow" opacity="0.1" fill="#333333" d="M1626.6,1282.8c0,45.4-280.5,82.1-626.6,82.1
@@ -1005,60 +1003,63 @@
             </svg>
 
 
-                <!-- Audio stuff -->
-                <audio id="Big-Rack-Tom-Audio">
+    <!-- Audio stuff -->
+    <audio id="Big-Rack-Tom-Audio">
                 <source src="asset/sounds/Big-Rack-Tom.mp3"
                     preload="auto" type="audio/mp3" />
             </audio>
-                <audio id="Crash-Audio">
+    <audio id="Crash-Audio">
                 <source src="asset/sounds/Crash.mp3" preload="auto"
                     type="audio/mp3" />
             </audio>
-                <audio id="Floor-Tom-Audio">
+    <audio id="Floor-Tom-Audio">
                 <source src="asset/sounds/Floor-Tom.mp3"
                     preload="auto" type="audio/mp3" />
             </audio>
-                <audio id="Hi-Hat-Closed-Audio">
+    <audio id="Hi-Hat-Closed-Audio">
                 <source src="asset/sounds/Hi-Hat-Closed.mp3"
                     preload="auto" type="audio/mp3" />
             </audio>
-                <audio id="Hi-Hat-Open-Audio">
+    <audio id="Hi-Hat-Open-Audio">
                 <source src="asset/sounds/High-Hat-Open.mp3"
                     preload="auto" type="audio/mp3" />
             </audio>
-                <audio id="Kick-Audio">
+    <audio id="Kick-Audio">
                 <source src="asset/sounds/Kick.mp3" preload="auto"
                     type="audio/mp3" />
             </audio>
-                <audio id="Small-Rack-Tom-Audio">
+    <audio id="Small-Rack-Tom-Audio">
                 <source src="asset/sounds/Small-Rack-Tom.mp3"
                     preload="auto" type="audio/mp3" />
             </audio>
-                <audio id="Snare-Audio">
+    <audio id="Snare-Audio">
                 <source src="asset/sounds/Snare.mp3" preload="auto"
                     type="audio/mp3" />
             </audio>
-            </div>
-        </div>
-    </div>
-
-    <!-- <div class="back-img"></div> -->
 
     <style>
         /* game css */
         
+        body {
+            margin: 0;
+            padding: 0;
+            background: rgb(223, 139, 14);
+            display: flex;
+            justify-content: center;
+        }
+        
         svg {
-            height: 700px;
-            width: 700px;
+            height: 100%;
+            width: 100%;
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         }
         
         i {
-            color: $white;
+            color: white;
         }
         
         i:hover {
-            color: $gray-light;
+            color: gray-light;
         }
         
         #Drums:hover {
@@ -1067,6 +1068,83 @@
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script>
+        // all the code goes here
+        var POP = {
+
+            // set up some initial values
+            WIDTH: 380,
+            HEIGHT: 440,
+            // we'll set the rest of these
+            // in the init function
+            RATIO: null,
+            currentWidth: null,
+            currentHeight: null,
+            canvas: null,
+            ctx: null,
+
+            init: function() {
+
+                // the proportion of width to height
+                POP.RATIO = POP.WIDTH / POP.HEIGHT;
+                // these will change when the screen is resized
+                POP.currentWidth = POP.WIDTH;
+                POP.currentHeight = POP.HEIGHT;
+                // this is our canvas element
+                POP.svg = document.getElementsByTagName('svg')[0];
+                // setting this is important
+                // otherwise the browser will
+                // default to 320 x 200
+                POP.svg.width = POP.WIDTH;
+                POP.svg.height = POP.HEIGHT;
+                // the canvas context enables us to 
+                // interact with the canvas api
+                //POP.ctx = POP.canvas.getContext('2d');
+
+                // we're ready to resize
+                POP.resize();
+
+
+            },
+
+            resize: function() {
+
+                var min = Math.min(window.innerHeight, window.innerWidth);
+
+                POP.currentHeight = min;
+                // resize the width in proportion
+                // to the new height
+                POP.currentWidth = POP.currentHeight * POP.RATIO;
+
+                // this will create some extra space on the
+                // page, allowing us to scroll past
+                // the address bar, thus hiding it.
+                if (POP.android || POP.ios) {
+                    document.body.style.height = (min + 50) + 'px';
+                    console.log("mobile");
+                } else {
+                    console.log("desktop");
+                }
+
+                // set the new canvas style width and height
+                // note: our canvas is still 320 x 480, but
+                // we're essentially scaling it with CSS
+                POP.svg.style.width = POP.currentWidth + 'px';
+                POP.svg.style.height = POP.currentHeight + 'px';
+
+                // we use a timeout here because some mobile
+                // browsers don't fire if there is not
+                // a short delay
+                window.setTimeout(function() {
+                    window.scrollTo(0, 1);
+                }, 1);
+            }
+
+
+        };
+        // POP.init();
+        window.addEventListener('load', POP.init, false);
+        window.addEventListener('resize', POP.resize, false);
+        //   mainLoop() 
         /* game js*/
         crashCymbolAll = document.getElementById('Crash');
         crashCymbol = document.getElementById('Crash-Cymbol');

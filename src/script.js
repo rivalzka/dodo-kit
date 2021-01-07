@@ -14,9 +14,15 @@ function loaded() {
     });
 
     $('.level').on('tap', function(e) {
-        console.info('data', $(e.currentTarget).attr('data'));
+        var attr = $(this).attr('disabled');
 
-        alert('load level: ' + $(e.currentTarget).attr('data'));
+        // For some browsers, `attr` is undefined; for others,
+        // `attr` is false.  Check for both.
+        if (typeof attr !== typeof undefined && attr !== false) {
+            // ...
+            alert('Yakında gelecek' + $(e.currentTarget).attr('data'));
+        }
+        console.info('data', $(e.currentTarget).attr('data'));
     });
 
     myScroll.scrollToElement(document.querySelector('#scrolling-menu-wrapper li:nth-child(5)'), null, null, true)
@@ -28,6 +34,10 @@ document.addEventListener('touchmove', function(e) {
 
 function PacmanOpen() {
     window.open("games/pacman/pacman.html", '_blank', 'location=yes,height=650,width=600,scrollbars=yes,status=yes');
+}
+
+function DodoboxOpen() {
+    window.open("games/dodobox/index.html", '_blank', 'location=yes,height=650,width=600,scrollbars=yes,status=yes');
 }
 
 function DrumkitOpen() {
