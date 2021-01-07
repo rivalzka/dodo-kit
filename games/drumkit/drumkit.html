@@ -1041,11 +1041,15 @@
         /* game css */
         
         body {
+            position: absolute;
             margin: 0;
             padding: 0;
             background: rgb(223, 139, 14);
             display: flex;
             justify-content: center;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
         }
         
         svg {

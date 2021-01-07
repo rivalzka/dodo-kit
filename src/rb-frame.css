@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.frame {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: min(100vw, 100vh);
+    height: min(100vw, 100vh);
+}
+
+.bg-red {
+    background-color: rgb(155, 0, 0);
+}
