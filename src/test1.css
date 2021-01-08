@@ -371,6 +371,10 @@ a {
     background-image: url("../assets/images/animals.PNG");
 }
 
+#scrolling-menu-wrapper ul .bg-mar {
+    background-image: url("../games/mario/images/mario-head.png");
+}
+
 
 /* width */
 

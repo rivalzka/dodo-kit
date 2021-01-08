@@ -52,6 +52,9 @@ function AnimalsOpen() {
     window.open("games/animals/index.html", '_blank', 'location=yes,height=650,width=600,scrollbars=yes,status=yes');
 }
 
+function MarioOpen() {
+    window.open("games/mario/index.html", '_blank', 'location=yes,height=650,width=600,scrollbars=yes,status=yes');
+}
 
 var keyList = {
     arrow_left: {
