@@ -14,15 +14,12 @@
 
     <style type="text/css">
         body {
-            position: absolute;
             margin: 0;
             padding: 0;
             background: #000;
-            top: 50%;
-            -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
             display: flex;
             justify-content: center;
+            overflow: hidden;
         }
         
         canvas {
@@ -157,7 +154,6 @@
         // POP.init();
         window.addEventListener('load', POP.init, false);
         window.addEventListener('resize', POP.resize, false);
-        //   mainLoop() 
 
 
         var NONE = 4,
