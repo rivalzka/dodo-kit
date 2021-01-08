@@ -1030,8 +1030,8 @@
                 if (e.keyCode === KEY.N || e.keyCode === KEY.SPACEBAR) {
                     startNewGame();
                 } else if (e.keyCode === KEY.S) {
-                    audio.disableSound();
-                    localStorage["soundDisabled"] = !soundDisabled();
+                    // audio.disableSound();
+                    // localStorage["soundDisabled"] = !soundDisabled();
                 } else if (e.keyCode === KEY.P && state === PAUSE) {
                     audio.resume();
                     map.draw(ctx);
