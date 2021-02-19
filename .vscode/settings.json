@@ -1,3 +1,5 @@
 {
-    "liveServer.settings.port": 5501
+    "colorize.languages": ["javascript", "css"],
+    "liveServer.settings.port": 5501,
 }
+

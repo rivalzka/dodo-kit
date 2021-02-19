@@ -8,50 +8,37 @@
     <script src="src/lib/jquery-ui.min.js"></script>
     <script src="src/lib/bootstrap.min.js"></script>
     <script src="src/lib/fawesome.js"></script>
+    <script src="src/lib/angular.min.js"></script>
     <script src="src/js/script.js"></script>
+    <script src="src/js/dodoapp.js"></script>
     <link rel="stylesheet" href="src/lib/jquery-ui.css">
     <link rel="stylesheet" href="src/lib/bootstrap.min.css">
     <link rel="stylesheet" href="src/css/style.css">
 </head>
 
-<body id="page-top" class="index theme assets">
+<body id="{{homeSection.id}}" class="index theme assets" ng-app="dodoapp" ng-controller="generalData">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink border-a">
         <div class="container ">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-                <a class="navbar-brand page-scroll" href="#page-top"><img src="//via.placeholder.com/50" alt="dodo ikon">DODO</a>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <img src="{{tabMenu.icon.src}}" alt="{{tabMenu.icon.alt}}"> {{tabMenu.name}}
+                </a>
 
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="bs-navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden active">
-                        <a href="#page-top">Anasayfa</a>
+                    <li class="" ng-repeat="tb in tabMenuContent track by $index">
+                        <a class="page-scroll" href="#{{tb.id}}">{{tb.name}}</a>
                     </li>
-                    <li class="">
-                        <a class="page-scroll" href="#page-top">Anasayfa</a>
-                    </li>
-                    <li class="">
-                        <a class="page-scroll" href="#page-about">Hakkında</a>
-                    </li>
-                    <li class="">
-                        <a class="page-scroll" href="#page-activities">Etkinlikler</a>
-                    </li>
-                    <li class="">
-                        <a class="page-scroll" href="#page-sss">SSS</a>
-                    </li>
-                    <!-- <li class="">
-                        <a class="page-scroll" href="#page-"></a>
-                    </li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -60,66 +47,45 @@
     </nav>
 
     <!-- Header -->
-    <header>
+    <header style="--intro-bg-img: url({{dodoBoardImageBackground1080x720.src}})">
         <div class="container intro">
             <div class="intro-text">
-                <div class="intro-lead-in">DODO </div>
-                <div class="intro-heading">Minicik icat kiti ... </div>
-                <img src="//via.placeholder.com/300x300" alt="dodo ikon" class="border-a">
+                <div class="intro-lead-in">{{homeSection.header}}</div>
+                <div class="intro-heading">{{homeSection.desc}}</div>
+                <img src="{{dodoBoardImage300x300.src}}" alt="{{dodoBoardImage300x300.alt}}" class="border-a">
             </div>
         </div>
-        <a href="#page-about" class="page-scroll btn-icon "><i class="fas fa-arrow-circle-down"></i></a>
+        <a href="#{{aboutSection.id}}" class="page-scroll btn-icon "><i class="fas fa-arrow-circle-down"></i></a>
     </header>
 
     <!-- about dodo section -->
-    <section id="page-about" class="border-a">
+    <section id="{{aboutSection.id}}" class="border-a" style="background-color: {{aboutSection.bgColor}}">
         <div class="container ">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">DODO Hakkında</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto</h3>
+                    <h2 class="section-heading">{{aboutSection.header}}</h2>
+                    <h3 class="section-subheading text-muted">{{aboutSection.desc}}</h3>
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-sm-4 margin-t ">
+                <div class="col-sm-4 margin-t " ng-repeat="content in aboutContents track by $index">
                     <span class="fa-stack fa-4x">
-                        <i class="fas fa-graduation-cap fa-stack-1x about-icons"></i>
-                        <!-- <i class="fas fa-graduation-cap"></i> -->
-                        <!-- <i class="glyphicon glyphicon-tree-conifer"></i> -->
+                        <i class="{{content.icon}} fa-stack-1x about-icons"></i>
                     </span>
-                    <h4 class="about-heading">DODO'yla Öğren</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-sm-4 margin-t ">
-                    <span class="fa-stack fa-4x">
-                        <!-- <i class="fa fa-circle fa-stack-2x text-primary"></i> -->
-                        <i class="fas fa-microscope fa-stack-1x about-icons"></i>
-                        <!-- <i class="fas fa-microscope"></i> -->
-                        <!-- <i class="glyphicon glyphicon-heart"></i> -->
-                    </span>
-                    <h4 class="about-heading">DODO'yla Keşfet</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-sm-4 margin-t">
-                    <span class="fa-stack fa-4x">
-                        <!-- <i class="fa fa-circle fa-stack-2x text-primary"></i> -->
-                        <i class="fas fa-gamepad fa-stack-1x about-icons"></i>
-                        <!-- <i class="glyphicon glyphicon-tint"></i> -->
-                    </span>
-                    <h4 class="about-heading">DODO'yla Eğlen</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <h4 class="about-heading">{{content.title}}</h4>
+                    <p class="text-muted">{{content.text}}</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- activities section -->
-    <section id="page-activities" class="border-a">
+    <section id="{{activitiesSection.id}}" class="border-a" style="background-color: {{activitiesSection.bgColor}}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Etkinlikler</h2>
-                    <!-- <h3 class="section-subheading text-muted">Dodo ile yapılabilecek etkinlikler aşağıdadır gibi bir yazı.</h3> -->
+                    <h2 class="section-heading">{{activitiesSection.header}}</h2>
+                    <h3 class="section-subheading text-muted">{{activitiesSection.desc}}</h3>
                 </div>
             </div>
             <div class="row">
@@ -212,7 +178,7 @@
     </section>
 
     <!-- SSS section -->
-    <section id="page-sss" class="border-a">
+    <section id="page-sss" class="border-a" style="background-color: {{aboutSection.bgColor}}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
