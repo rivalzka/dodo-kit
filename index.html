@@ -2,270 +2,333 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- <link rel="stylesheet" href="https://cdn.rawgit.com/JacobLett/bootstrap4-latest/master/bootstrap-4-latest.min.css"> -->
-    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"> -->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://startbootstrap.com/templates/agency/font-awesome-4.1.0/css/font-awesome.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="src/lib/jquery.min.js"></script>
+    <script src="src/lib/jquery-ui.min.js"></script>
+    <script src="src/lib/bootstrap.min.js"></script>
+    <script src="src/lib/fawesome.js"></script>
+    <script src="src/js/script.js"></script>
+    <link rel="stylesheet" href="src/lib/jquery-ui.css">
+    <link rel="stylesheet" href="src/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
 
-<body id="page-top" class="index theme1">
+<body id="page-top" class="index theme assets">
+
     <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink border-a">
+        <div class="container ">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+                <a class="navbar-brand page-scroll" href="#page-top"><img src="//via.placeholder.com/50" alt="dodo ikon">DODO</a>
 
+            </div>
 
-    <div class="body-container">
-        <div class="header">
-            <a href="#dodo-home">
-                <div class="head-logo">
-                    <i class="fas fa-dove"></i>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden active">
+                        <a href="#page-top">Anasayfa</a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll" href="#page-top">Anasayfa</a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll" href="#page-about">Hakkında</a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll" href="#page-activities">Etkinlikler</a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll" href="#page-sss">SSS</a>
+                    </li>
+                    <!-- <li class="">
+                        <a class="page-scroll" href="#page-"></a>
+                    </li> -->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container intro">
+            <div class="intro-text">
+                <div class="intro-lead-in">DODO </div>
+                <div class="intro-heading">Minicik icat kiti ... </div>
+                <img src="//via.placeholder.com/300x300" alt="dodo ikon" class="border-a">
+            </div>
+        </div>
+        <a href="#page-about" class="page-scroll btn-icon "><i class="fas fa-arrow-circle-down"></i></a>
+    </header>
+
+    <!-- about dodo section -->
+    <section id="page-about" class="border-a">
+        <div class="container ">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">DODO Hakkında</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto</h3>
                 </div>
-            </a>
-            <a href="#dodo-home">
-                <div class="head-text">
-                    <h1> DODO </h1>
+            </div>
+            <div class="row text-center">
+                <div class="col-sm-4 margin-t ">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-graduation-cap fa-stack-1x about-icons"></i>
+                        <!-- <i class="fas fa-graduation-cap"></i> -->
+                        <!-- <i class="glyphicon glyphicon-tree-conifer"></i> -->
+                    </span>
+                    <h4 class="about-heading">DODO'yla Öğren</h4>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
-            </a>
-            <div class="head-menu">
-                <!-- <div id="mh-home" class="mh-home">
-                    <i class="fas fa-home"></i><br>
-                    <i class="">ANASAYFA</i>
+                <div class="col-sm-4 margin-t ">
+                    <span class="fa-stack fa-4x">
+                        <!-- <i class="fa fa-circle fa-stack-2x text-primary"></i> -->
+                        <i class="fas fa-microscope fa-stack-1x about-icons"></i>
+                        <!-- <i class="fas fa-microscope"></i> -->
+                        <!-- <i class="glyphicon glyphicon-heart"></i> -->
+                    </span>
+                    <h4 class="about-heading">DODO'yla Keşfet</h4>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
-                <div id="mh-learn" class="mh-learn">
-                    <i class="fas fa-graduation-cap"></i><br>
-                    <i class="">ÖĞREN</i>
-                </div>
-                <div id="mh-play" class="mh-play">
-                    <i class="fas fa-gamepad"></i><br>
-                    <i class="">OYNA</i>
-                </div> -->
-                <div id="mh-info" class="mh-info">
-                    <i class="fas fa-question-circle"></i>
-                    <i class="">S.S.S.</i>
+                <div class="col-sm-4 margin-t">
+                    <span class="fa-stack fa-4x">
+                        <!-- <i class="fa fa-circle fa-stack-2x text-primary"></i> -->
+                        <i class="fas fa-gamepad fa-stack-1x about-icons"></i>
+                        <!-- <i class="glyphicon glyphicon-tint"></i> -->
+                    </span>
+                    <h4 class="about-heading">DODO'yla Eğlen</h4>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
             </div>
         </div>
-        <div class="main">
-            <div id="dodo-home" class="main-home">
-                <!-- <div class="home-poster shadow"> -->
-                <!-- <h2 class="poster-text">Minicik İcat Kiti</h1> -->
-                <!-- </div> -->
-                <!-- <div class="alt-text shadow">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
-                    survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
-                    with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </div> -->
-                <!-- <div class="section-divide">&#128526;</div> -->
+    </section>
 
-                <!-- Header -->
-                <header>
-                    <div class="container">
-                        <div class="intro-text">
-                            <div class="intro-lead-in">DODO</div>
-                            <div class="intro-heading">Minicik İcat Kiti</div>
-                            <a href="#services" class="page-scroll btn btn-xl">Haydi Başlayalım</a>
-                        </div>
-                    </div>
-                </header>
-                <div class="content-view shadow ">
-
-                    <div class="content-img-">
-                        <div class="content-img bg1"> </div>
-                    </div>
-                    <div class="content-text borderr">
-                        <h1>Keşfet&#8194;&#129488;</h1><br>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><br>
-                        <a href="#dodo-captures">
-                            <div class="btn-see-more go-to-less">
-                                Go to Less
+    <!-- activities section -->
+    <section id="page-activities" class="border-a">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Etkinlikler</h2>
+                    <!-- <h3 class="section-subheading text-muted">Dodo ile yapılabilecek etkinlikler aşağıdadır gibi bir yazı.</h3> -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 activities-item">
+                    <a href="#activity-modal" class="activities-link" data-toggle="modal">
+                        <div class="activities-hover">
+                            <div class="activities-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
                             </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- <div class="section-divide border"></div> -->
-                <div class="content-view shadow">
-                    <div class="content-img-">
-                        <div class="content-img bg2"> </div>
-                    </div>
-                    <div class="content-text borderr">
-                        <h1>Öğren&#8194;&#128526;</h1><br>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><br>
-                        <div class="btn-see-more">
-                            See More
                         </div>
-                    </div>
-                </div>
-                <!-- <div class="section-divide border"></div> -->
-                <div class="content-view  shadow">
-                    <div class="content-img-">
-                        <div class="content-img bg3"> </div>
-                    </div>
-                    <div class="content-text borderr">
-                        <h1>Oyna&#8194;&#128523;</h1><br>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><br>
-                        <div class="btn-see-more">
-                            See More
-                        </div>
-                    </div>
-                </div>
-
-                <!-- <div class="section-divide border"></div> -->
-
-
-            </div>
-
-            <div id="dodo-captures" class="main-learn ">
-                <div class="header-learn shadow">
-                    <h2>Lorem Ipsum Lorem</h2>
-                </div>
-                <div class="content-learn">
-                    <div class="activity-card borderr">
-                        <i data-before-text="YENİ" data-before-type="red pill"></i>
-                        <h3> Bölüm 1 </h3>
-                        <img src="https://img-s2.onedio.com/id-52e64f901c5471697f00007f/rev-0/w-980/listing/f-jpg-webp/s-1202186e5568b3dc80c61846176e466e557bf4bb.webp">
-                        <p>Hello , this is a nice picture , i hope you to like it , it was taken by me you can contact me to buy it ... just kidding ce picture , i hope you to like it , it was taken by me you can contact me to buy it ..</p>
-
-                        <div class="button">
-                            <a href="#dodo-capture">
-                                <button class="go-less-1">Read More</button>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="activity-card borderr">
-                        <h3> Ders 1 </h3>
-                        <img src="https://img-s2.onedio.com/id-52e64f901c5471697f00007f/rev-0/w-980/listing/f-jpg-webp/s-1202186e5568b3dc80c61846176e466e557bf4bb.webp">
-                        <p>Hello , this is a nice picture , i hope you to like it , it was taken by me you can contact me to buy it ...</p>
-                        <div class="button">
-                            <button>Read More</button>
-                        </div>
-                    </div>
-                    <div class="activity-card borderr">
-                        <h3> Ders 1 </h3>
-                        <img src="https://img-s2.onedio.com/id-52e64f901c5471697f00007f/rev-0/w-980/listing/f-jpg-webp/s-1202186e5568b3dc80c61846176e466e557bf4bb.webp">
-                        <p>Hello , this is a nice picture , i hope you to like it , it was taken by me you can contact me to buy it ...</p>
-                        <div class="button">
-                            <button>Read More</button>
-                        </div>
-                    </div>
-                    <div class="activity-card borderr">
-                        <h3> Ders 1 </h3>
-                        <img src="https://img-s2.onedio.com/id-52e64f901c5471697f00007f/rev-0/w-980/listing/f-jpg-webp/s-1202186e5568b3dc80c61846176e466e557bf4bb.webp">
-                        <p>Hello , this is a nice picture , i hope you to like it , it was taken by me you can contact me to buy it ...</p>
-                        <div class="button">
-                            <button>Go to lesson</button>
-                        </div>
-                    </div>
-                    <div class="activity-card borderr">
-                        <h3> Ders 1 </h3>
-                        <img src="https://img-s2.onedio.com/id-52e64f901c5471697f00007f/rev-0/w-980/listing/f-jpg-webp/s-1202186e5568b3dc80c61846176e466e557bf4bb.webp">
-                        <p>Hello , this is a nice picture , i hope you to like it , it was taken by me you can contact me to buy it ...</p>
-                        <div class="button">
-                            <button>Read More</button>
-                        </div>
-                    </div>
-                    <div class="activity-card borderr">
-                        <h3> Ders 1 </h3>
-                        <img src="https://img-s2.onedio.com/id-52e64f901c5471697f00007f/rev-0/w-980/listing/f-jpg-webp/s-1202186e5568b3dc80c61846176e466e557bf4bb.webp">
-                        <p>Hello , this is a nice picture , i hope you to like it , it was taken by me you can contact me to buy it ...</p>
-                        <div class="button">
-                            <button>Read More</button>
-                        </div>
-                    </div>
-                    <div class="activity-card borderr">
-                        <h3> Ders 1 </h3>
-                        <img src="https://img-s2.onedio.com/id-52e64f901c5471697f00007f/rev-0/w-980/listing/f-jpg-webp/s-1202186e5568b3dc80c61846176e466e557bf4bb.webp">
-                        <p>Hello , this is a nice picture , i hope you to like it , it was taken by me you can contact me to buy it ...</p>
-                        <div class="button">
-                            <button>Read More</button>
-                        </div>
-                    </div>
-                    <div class="activity-card borderr">
-                        <h3> Ders 1 </h3>
-                        <img src="https://img-s2.onedio.com/id-52e64f901c5471697f00007f/rev-0/w-980/listing/f-jpg-webp/s-1202186e5568b3dc80c61846176e466e557bf4bb.webp">
-                        <p>Hello , this is a nice picture , i hope you to like it , it was taken by me you can contact me to buy it ...</p>
-                        <div class="button">
-                            <button>Go to lesson</button>
-                        </div>
-                    </div>
-                    <div class="activity-card borderr">
-                        <h3> Ders 1 </h3>
-                        <img src="https://img-s2.onedio.com/id-52e64f901c5471697f00007f/rev-0/w-980/listing/f-jpg-webp/s-1202186e5568b3dc80c61846176e466e557bf4bb.webp">
-                        <p>Hello , this is a nice picture , i hope you to like it , it was taken by me you can contact me to buy it ...</p>
-                        <div class="button">
-                            <button>Read More</button>
-                        </div>
-                    </div>
-                    <div class="activity-card borderr">
-                        <h3> Ders 1 </h3>
-                        <img src="https://img-s2.onedio.com/id-52e64f901c5471697f00007f/rev-0/w-980/listing/f-jpg-webp/s-1202186e5568b3dc80c61846176e466e557bf4bb.webp">
-                        <p>Hello , this is a nice picture , i hope you to like it , it was taken by me you can contact me to buy it ...</p>
-                        <div class="button">
-                            <button>Read More</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="dodo-capture" class="main-capture ">
-                <div class="capture-header">
-                    <div></div>
-                    <div class="capture-name">
-                        Capture 1
-                    </div>
-                    <a href="#dodo-captures">
-                        <div class="capture-close">
-                            <i class="far fa-window-close"></i>
-                        </div>
+                        <img src="//via.placeholder.com/1080x720" class="img-responsive" alt="">
                     </a>
+                    <div class="activities-caption">
+                        <h4>Round Icons</h4>
+                        <p class="text-muted">Graphic Design</p>
+                    </div>
                 </div>
-
-                <div class="capture-body">
-
-                    <a class="button" href="#open-capture">Open it up!</a>
-
-
-                    <iframe src="http://127.0.0.1:5500/index.html#dodo-home" frameborder="0" allowfullscreen></iframe>
-
-
-
+                <div class="col-md-4 col-sm-6 activities-item">
+                    <a href="#activity-modal" class="activities-link" data-toggle="modal">
+                        <div class="activities-hover">
+                            <div class="activities-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="https://unsplash.imgix.net/44/9s1lvXLlSbCX5l3ZaYWP_hdr-1.jpg?q=75&w=1080&h=1080&fit=max&fm=jpg&auto=format&s=f0a1db79752dbb04ec6d2aab7d17c7b0" class="img-responsive" alt="">
+                    </a>
+                    <div class="activities-caption">
+                        <h4>Startup Framework</h4>
+                        <p class="text-muted">Website Design</p>
+                    </div>
                 </div>
-
-            </div>
-            <!--   <div class="main-info">
-                info
-
-            </div> -->
-            <div class="footer">
-                <p>&copy; 2021 R&B</p>
+                <div class="col-md-4 col-sm-6 activities-item">
+                    <a href="#activity-modal" class="activities-link" data-toggle="modal">
+                        <div class="activities-hover">
+                            <div class="activities-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="https://unsplash.imgix.net/46/Ov6ZY1zLTWmhPC0wFysP_IMG_2896_edt.jpg?q=75&w=1080&h=1080&fit=max&fm=jpg&auto=format&s=6518e4df89659818f6c0392175a9c5e6" class="img-responsive" alt="">
+                    </a>
+                    <div class="activities-caption">
+                        <h4>Treehouse</h4>
+                        <p class="text-muted">Website Design</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 activities-item">
+                    <a href="#activity-modal" class="activities-link" data-toggle="modal">
+                        <div class="activities-hover">
+                            <div class="activities-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="https://unsplash.imgix.net/44/9s1lvXLlSbCX5l3ZaYWP_hdr-1.jpg?q=75&w=1080&h=1080&fit=max&fm=jpg&auto=format&s=f0a1db79752dbb04ec6d2aab7d17c7b0" class="img-responsive" alt="">
+                    </a>
+                    <div class="activities-caption">
+                        <h4>Golden</h4>
+                        <p class="text-muted">Website Design</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 activities-item">
+                    <a href="#activity-modal" class="activities-link" data-toggle="modal">
+                        <div class="activities-hover">
+                            <div class="activities-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="https://unsplash.imgix.net/46/Ov6ZY1zLTWmhPC0wFysP_IMG_2896_edt.jpg?q=75&w=1080&h=1080&fit=max&fm=jpg&auto=format&s=6518e4df89659818f6c0392175a9c5e6" class="img-responsive" alt="">
+                    </a>
+                    <div class="activities-caption">
+                        <h4>Escape</h4>
+                        <p class="text-muted">Website Design</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 activities-item">
+                    <a href="#activity-modal" class="activities-link" data-toggle="modal">
+                        <div class="activities-hover">
+                            <div class="activities-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="https://unsplash.imgix.net/uploads%2F1411419068566071cef10%2F7562527b?q=75&w=1080&h=1080&fit=max&fm=jpg&auto=format&s=240c45655f09c546232a6f106688e502" class="img-responsive" alt="">
+                    </a>
+                    <div class="activities-caption">
+                        <h4>Dreams</h4>
+                        <p class="text-muted">Website Design</p>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-    </div>
+    <!-- SSS section -->
+    <section id="page-sss" class="border-a">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Sıkça Sorulan Sorular</h2>
+                    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3> -->
+                </div>
+            </div>
 
-    <div id="open-capture" class="modalbg">
-        <div class="dialog">
-            <a href="#dodo-capture" title="Close" class="close" id="close-video">X</a>
-            <iframe id="capture-video" src="//www.youtube.com/embed/P6uEzcaunVs" frameborder="0" allowfullscreen></iframe>
+            <div class="faq-content">
+                <div class="faq-question">
+                    <input id="q1" type="checkbox" class="panel">
+                    <div class="plus">+</div>
+                    <label for="q1" class="panel-title">What is the meaning of life?</label>
+                    <div class="panel-content">42</div>
+                </div>
+
+                <div class="faq-question">
+                    <input id="q2" type="checkbox" class="panel">
+                    <div class="plus">+</div>
+                    <label for="q2" class="panel-title">How much wood would a woodchuck chuck?</label>
+                    <div class="panel-content">A woodchuck would chuck all the wood he could chuck, if a woodchuck could chuck wood!</div>
+                </div>
+
+                <div class="faq-question">
+                    <input id="q3" type="checkbox" class="panel">
+                    <div class="plus">+</div>
+                    <label for="q3" class="panel-title">What happens if Pinocchio says, "my nose will grow now"?</label>
+                    <div class="panel-content">Certain questions are better left &nbsp; <a href="https://en.wikipedia.org/wiki/The_Unanswered_Question" target="_blank">unanswered</a></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 margin-b">
+                    <span class="copyright">Copyright ©dodo.com 2021</span>
+                </div>
+                <div class="col-md-4 margin-b">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="#"><i class="fab fa-youtube"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 margin-b">
+                    <ul class="list-inline quicklinks">
+                        <li>
+                            <a href="#">privacy terms</a>
+                        </li>
+                        <li>
+                            <a href="#">polic</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Activities Modal -->
+    <div class="activity-modal modal fade" id="activity-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Details Go Here -->
+                            <h2>Pacman</h2>
+                            <!-- <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p> -->
+                            <!-- <img class="img-responsive" src="//via.placeholder.com/1080x720" alt=""> -->
+                            <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate,
+                                maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                            <p>
+                                <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase
+                                the 1500 icon set <a href="">here</a>.</p>
+                            <ul class="list-inline border-a">
+                                <li><strong>Oynanış: </strong></li>
+                                <li>Boşluk: Oyunu başlat </li>
+                                <li>P: Oyunu durdur </li>
+                                <li><i class="far fa-arrow-alt-circle-down"></i>: Aşağı git </li>
+                                <li><i class="far fa-arrow-alt-circle-left"></i>: Sola git </li>
+                                <li><i class="far fa-arrow-alt-circle-right"></i>: Sağa git </li>
+                                <li><i class="far fa-arrow-alt-circle-up"></i>: Yukarı çık </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12 ">
+                        <div class="embed-responsive embed-responsive-4by3">
+                            <iframe id="iframe-video" class="embed-responsive-item iframe-focus" src="https://www.youtube.com/embed/6TzRNpJdbQk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xs-12 ">
+                        <div class="embed-responsive embed-responsive-4by3 ">
+                            <iframe id="iframe-game" class="embed-responsive-item iframe-focus" src="src/games/pacman/pacman.html"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Kapat </button>
+                </div>
+            </div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- <script src="https://cdn.rawgit.com/JacobLett/bootstrap4-latest/master/bootstrap-4-latest.min.js"></script> -->
-    <script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"></script>
-    <script src="script.js"></script>
-    <script>
-    </script>
-    <!-- // <script src="https://vjs.zencdn.net/7.10.2/video.min.js"> -->
-    <!-- <script src="https://vjs.zencdn.net/4.1.0/video.js"></script> -->
 </body>
 
 </html>
