@@ -22,7 +22,7 @@ dodoApp.controller('dataSheet', function($scope) {
     };
 
     /* home section image paths */
-    $scope.dodoBoardImageBackground = { src: "//via.placeholder.com/1080x720", alt: "dodo kart resim arkaplanı" };
+    $scope.dodoBoardImageBackground = { src: "../assets/img/arkaplan2.jpg", alt: "dodo kart resim arkaplanı" };
     $scope.dodoBoardImage = { src: "//via.placeholder.com/1200x900", alt: "dodo kart resim" };
 
 
@@ -56,7 +56,22 @@ dodoApp.controller('dataSheet', function($scope) {
 
             ]
         },
+        dodobox: {
+            name: "Dodo Box",
+            src: "src/games/dodobox/index.html",
+            controls: [
+                { html: "'BOŞLUK' : Oyunu başlat", evt: 32 },
+                // { html: "'P' : Oyunu durdur/oynat", evt: 80 },
+                { html: "<i class='far fa-arrow-alt-circle-down'></i> : Aşağı Oklu Kutuyu Seç", evt: 40 },
+                { html: "<i class='far fa-arrow-alt-circle-up'></i> : Yukarı Oklu Kutuyu Seç", evt: 38 },
+                { html: "<i class='far fa-arrow-alt-circle-left'></i> : Sol Oklu Kutuyu Seç", evt: 37 },
+                { html: "<i class='far fa-arrow-alt-circle-right'></i> : Sağ Oklu Kutuyu Seç", evt: 39 },
+
+            ]
+        },
     };
+
+
 
     /*
     SECTION defines=
@@ -161,7 +176,7 @@ dodoApp.controller('dataSheet', function($scope) {
     */
     $scope.activityContents = [ // An activity contents define in '{ }' tags
         {
-
+            //Activity 
             title: "Etkinlik: Pacman",
             desc: "Bu içerikte pacman konsolu yapıyoruz ... ",
             content: {
@@ -171,6 +186,23 @@ dodoApp.controller('dataSheet', function($scope) {
                     "expedita beatae cupiditate,maiores repudiandae, nostrum, reiciendis facere nemo!",
                 video: "https://www.youtube.com/embed/6TzRNpJdbQk",
                 game: $scope.games.pacman,
+                image: {
+                    src: "//via.placeholder.com/1080x720",
+                    alt: "etkinlik resmi"
+                },
+            }
+        },
+        {
+            //Activity 
+            title: "Etkinlik: Dodo Kutuları",
+            desc: "Bu içerikte Dodo Kutuları'nı yakalıyoruz ... ",
+            content: {
+                title: "Dodo Kutuları",
+                text: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit" + " " +
+                    "Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia" + " " +
+                    "expedita beatae cupiditate,maiores repudiandae, nostrum, reiciendis facere nemo!",
+                video: "https://www.youtube.com/embed/6TzRNpJdbQk",
+                game: $scope.games.dodobox,
                 image: {
                     src: "//via.placeholder.com/1080x720",
                     alt: "etkinlik resmi"

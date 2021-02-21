@@ -295,12 +295,12 @@
     </style>
 
     <script>
-        window.onkeydown = function(e) {
+        document.onkeydown = function(e) {
             e.preventDefault();
         }
-        window.onkeyup = function(e) {
+        document.onkeyup = function(e) {
             var key = e.keyCode ? e.keyCode : e.which;
-            console.log("key: " + key);
+            // console.log("key: " + key, e);
             if (key == 87 || key == 119 || key == 38) { //w 
                 if (!game_over) kill_box("up");
             } else if (key == 65 || key == 97 || key == 37) { //a
@@ -309,7 +309,7 @@
                 if (!game_over) kill_box("down");
             } else if (key == 68 || key == 100 || key == 39) { //d
                 if (!game_over) kill_box("right");
-            } else if (key == 32) { //d
+            } else if (key == 32) { //space
                 if (game_over) start();
             }
             e.preventDefault();
@@ -327,12 +327,11 @@
 
         function hasClass(element, className) {
             var class_name = document.getElementById(element).className;
-            console.log("class name: " + class_name + " is contain ? " + className);
+            // console.log("class name: " + class_name + " is contain ? " + className);
             return (' ' + class_name + ' ').indexOf(' ' + className + ' ') > -1;
         }
 
         function kill_box(key) {
-            audio().play("boom");
             var itemx = undefined;
             var idx = -1;
             list.forEach(function(item, index) {
@@ -345,7 +344,9 @@
                     create_box();
                     idx = index;
                     itemx = item;
-                    console.log("find the box " + key);
+                    audio().play("boom");
+                    // list.
+                    // console.log("find the box " + key);
                 } else {
                     itemx = undefined;
                     console.log("not find the box " + key);
@@ -522,7 +523,7 @@
 
 
             function load(name, path, cb) {
-                console.log(name + " : load");
+                // console.log(name + " : load");
                 files[name] = document.createElement("audio");
                 var f = files[name];
                 // console.log(files[name] + " : ? ");
