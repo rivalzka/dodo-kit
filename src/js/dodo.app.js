@@ -22,6 +22,7 @@ dodoApp.controller('dataSheet', function($scope) {
     };
 
     /* home section image paths */
+    /**https://tr.pinterest.com/pin/822821794398992113/ arkaplan  */
     $scope.dodoBoardImageBackground = { src: "../assets/img/arkaplan2.jpg", alt: "dodo kart resim arkaplanı" };
     $scope.dodoBoardImage = { src: "//via.placeholder.com/1200x900", alt: "dodo kart resim" };
 
