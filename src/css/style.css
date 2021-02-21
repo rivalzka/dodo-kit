@@ -263,7 +263,7 @@ header {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 div.intro {
@@ -272,34 +272,30 @@ div.intro {
 
 header .intro-text {
     padding-top: 100px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     font-family: var(--head-font);
     font-weight: 700;
 }
 
 header .intro-text .intro-lead-in {
+    display: block;
     margin-bottom: 25px;
-    /* font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif; */
     font-size: 50px;
     font-style: italic;
     line-height: 22px;
 }
 
 header .intro-text .intro-heading {
-    /* margin-bottom: 25px; */
-    /* text-transform: uppercase; */
-    /* font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    display: block;
+    margin-bottom: 25px;
     font-size: 25px;
     line-height: 50px;
 }
 
 header .btn-icon {
-    position: absolute;
-    right: 50%;
+    position: relative;
     transform: translate(50%, -50%);
-    bottom: 10px;
     width: 60px;
-    /*60px width*/
     height: 60px;
     font-size: 40px;
     padding: 10px;
@@ -310,6 +306,12 @@ header .btn-icon {
     border-radius: 30px;
 }
 
+header .intro-text img {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
 header .btn-icon:hover {
     background-color: var(--header-btn-hvr-bg-color);
     color: var(--header-btn-fg-color);
@@ -317,25 +319,34 @@ header .btn-icon:hover {
     border-radius: 0;
 }
 
+header .container img {
+    width: 320px;
+    height: 240px;
+    margin: 0 auto;
+}
+
 @media(min-width:768px) {
     header .intro-text {
         padding-top: 100px;
-        padding-bottom: 100px;
+        padding-bottom: 30px;
     }
     header .intro-text .intro-lead-in {
         margin-bottom: 25px;
-        /* font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
         font-size: 80px;
-        /* font-style: italic; */
         line-height: 90px;
+        display: inline;
     }
     header .intro-text .intro-heading {
         margin-bottom: 25px;
-        /* text-transform: uppercase; */
-        /* font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+        margin-left: 25px;
         font-size: 40px;
-        /*font-weight: 700;
-        line-height: 75px; */
+        display: inline;
+    }
+    header .container img {
+        width: 480px;
+        height: 360px;
+        margin: 0 auto;
+        margin-top: 20px;
     }
 }
 
@@ -643,7 +654,7 @@ ul.social-buttons li a:active {
 
 .activity-modal .modal-content h2 {
     margin-bottom: 15px;
-    font-size: 3em;
+    font-size: 4em;
     font-family: var(--head-font);
 }
 
@@ -666,6 +677,53 @@ ul.social-buttons li a:active {
     margin-bottom: 30px;
     padding: 15px;
     font-size: 25px;
+}
+
+.activity-modal .modal-content ul.list-inline li {
+    padding: 5px;
+    margin: 5px;
+}
+
+.activity-modal .modal-content ul.list-inline li:hover {
+    cursor: pointer;
+}
+
+.activity-modal .modal-content ul.list-inline li.list-group-item {
+    background-color: inherit;
+    padding: 5px;
+}
+
+.activity-modal .modal-body p.text-content img {
+    float: none;
+    display: block;
+    margin: 20px auto;
+    width: 320px;
+    height: 240px;
+}
+
+@media(min-width:768px) {
+    .activity-modal .modal-body p.text-content img {
+        float: left;
+        display: inline-block;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        width: 320px;
+    }
+    .activity-modal iframe {
+        margin-top: 0;
+    }
+    /* .activity-modal .modal-content h2 {
+        font-size: 4em;
+    } */
+}
+
+.activity-modal .modal-body p.text-content {
+    text-align: justify;
+    text-indent: 40px;
+    float: left;
+    display: inline-block;
+    width: auto;
+    padding: 20px;
 }
 
 .activity-modal .modal-content img {
@@ -707,12 +765,6 @@ ul.social-buttons li a:active {
     -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
-}
-
-.activity-modal iframe {
-    height: 400px;
-    /* padding: 10px; */
-    background-color: #333;
 }
 
 .parent {

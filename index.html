@@ -9,14 +9,15 @@
     <script src="src/lib/bootstrap.min.js"></script>
     <script src="src/lib/fawesome.js"></script>
     <script src="src/lib/angular.min.js"></script>
+    <script src="src/lib/angular-sanitize.min.js"></script>
     <script src="src/js/script.js"></script>
-    <script src="src/js/dodoapp.js"></script>
+    <script src="src/js/dodo.app.js"></script>
     <link rel="stylesheet" href="src/lib/jquery-ui.css">
     <link rel="stylesheet" href="src/lib/bootstrap.min.css">
     <link rel="stylesheet" href="src/css/style.css">
 </head>
 
-<body id="{{homeSection.id}}" class="index theme assets" ng-app="dodoapp" ng-controller="generalData">
+<body id="{{homeSection.id}}" class="index theme assets" ng-app="dodoapp" ng-controller="dataSheet" ng-init="">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink border-a">
@@ -29,7 +30,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
+                <a class="navbar-brand page-scroll" href="#{{homeSection.id}}">
                     <img src="{{tabMenu.icon.src}}" alt="{{tabMenu.icon.alt}}"> {{tabMenu.name}}
                 </a>
 
@@ -47,18 +48,21 @@
     </nav>
 
     <!-- Header -->
-    <header style="--intro-bg-img: url({{dodoBoardImageBackground1080x720.src}})">
+    <header style="--intro-bg-img: url({{dodoBoardImageBackground.src}})">
         <div class="container intro">
             <div class="intro-text">
                 <div class="intro-lead-in">{{homeSection.header}}</div>
                 <div class="intro-heading">{{homeSection.desc}}</div>
-                <img src="{{dodoBoardImage300x300.src}}" alt="{{dodoBoardImage300x300.alt}}" class="border-a">
+                <img src="{{dodoBoardImage.src}}" alt="{{dodoBoardImage.alt}}" class="img-responsive border-a">
+            </div>
+            <div class="row">
+
+                <a href="#{{aboutSection.id}}" class="page-scroll btn-icon "><i class="fas fa-arrow-circle-down"></i></a>
             </div>
         </div>
-        <a href="#{{aboutSection.id}}" class="page-scroll btn-icon "><i class="fas fa-arrow-circle-down"></i></a>
     </header>
 
-    <!-- about dodo section -->
+    <!-- About Section -->
     <section id="{{aboutSection.id}}" class="border-a" style="background-color: {{aboutSection.bgColor}}">
         <div class="container ">
             <div class="row">
@@ -79,7 +83,7 @@
         </div>
     </section>
 
-    <!-- activities section -->
+    <!-- Activities Section -->
     <section id="{{activitiesSection.id}}" class="border-a" style="background-color: {{activitiesSection.bgColor}}">
         <div class="container">
             <div class="row">
@@ -89,126 +93,41 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-6 activities-item">
-                    <a href="#activity-modal" class="activities-link" data-toggle="modal">
+                <div class="col-md-4 col-sm-6 activities-item" ng-repeat="activity in activityContents track by $index">
+                    <a href="#activity-modal" class="activities-link" data-toggle="modal" ng-click="selectActivity(activity.content)">
                         <div class="activities-hover">
                             <div class="activities-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="//via.placeholder.com/1080x720" class="img-responsive" alt="">
+                        <img src="{{activity.content.image.src}}" class="img-responsive" alt="{{activity.content.image.alt}}">
                     </a>
                     <div class="activities-caption">
-                        <h4>Round Icons</h4>
-                        <p class="text-muted">Graphic Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 activities-item">
-                    <a href="#activity-modal" class="activities-link" data-toggle="modal">
-                        <div class="activities-hover">
-                            <div class="activities-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="https://unsplash.imgix.net/44/9s1lvXLlSbCX5l3ZaYWP_hdr-1.jpg?q=75&w=1080&h=1080&fit=max&fm=jpg&auto=format&s=f0a1db79752dbb04ec6d2aab7d17c7b0" class="img-responsive" alt="">
-                    </a>
-                    <div class="activities-caption">
-                        <h4>Startup Framework</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 activities-item">
-                    <a href="#activity-modal" class="activities-link" data-toggle="modal">
-                        <div class="activities-hover">
-                            <div class="activities-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="https://unsplash.imgix.net/46/Ov6ZY1zLTWmhPC0wFysP_IMG_2896_edt.jpg?q=75&w=1080&h=1080&fit=max&fm=jpg&auto=format&s=6518e4df89659818f6c0392175a9c5e6" class="img-responsive" alt="">
-                    </a>
-                    <div class="activities-caption">
-                        <h4>Treehouse</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 activities-item">
-                    <a href="#activity-modal" class="activities-link" data-toggle="modal">
-                        <div class="activities-hover">
-                            <div class="activities-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="https://unsplash.imgix.net/44/9s1lvXLlSbCX5l3ZaYWP_hdr-1.jpg?q=75&w=1080&h=1080&fit=max&fm=jpg&auto=format&s=f0a1db79752dbb04ec6d2aab7d17c7b0" class="img-responsive" alt="">
-                    </a>
-                    <div class="activities-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 activities-item">
-                    <a href="#activity-modal" class="activities-link" data-toggle="modal">
-                        <div class="activities-hover">
-                            <div class="activities-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="https://unsplash.imgix.net/46/Ov6ZY1zLTWmhPC0wFysP_IMG_2896_edt.jpg?q=75&w=1080&h=1080&fit=max&fm=jpg&auto=format&s=6518e4df89659818f6c0392175a9c5e6" class="img-responsive" alt="">
-                    </a>
-                    <div class="activities-caption">
-                        <h4>Escape</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 activities-item">
-                    <a href="#activity-modal" class="activities-link" data-toggle="modal">
-                        <div class="activities-hover">
-                            <div class="activities-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="https://unsplash.imgix.net/uploads%2F1411419068566071cef10%2F7562527b?q=75&w=1080&h=1080&fit=max&fm=jpg&auto=format&s=240c45655f09c546232a6f106688e502" class="img-responsive" alt="">
-                    </a>
-                    <div class="activities-caption">
-                        <h4>Dreams</h4>
-                        <p class="text-muted">Website Design</p>
+                        <h4>{{activity.title}}</h4>
+                        <p class="text-muted">{{activity.desc}}</p>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
-    <!-- SSS section -->
-    <section id="page-sss" class="border-a" style="background-color: {{aboutSection.bgColor}}">
+    <!-- SSS Section -->
+    <section id="{{faqSection.id}}" class="border-a" style="background-color: {{faqSection.bgColor}}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Sıkça Sorulan Sorular</h2>
-                    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3> -->
+                    <h2 class="section-heading">{{faqSection.header}}</h2>
                 </div>
             </div>
 
             <div class="faq-content">
-                <div class="faq-question">
-                    <input id="q1" type="checkbox" class="panel">
+                <div class="faq-question" ng-repeat="question in faqContents track by $index">
+                    <input id="{{question.id}}" type="checkbox" class="panel">
                     <div class="plus">+</div>
-                    <label for="q1" class="panel-title">What is the meaning of life?</label>
-                    <div class="panel-content">42</div>
-                </div>
-
-                <div class="faq-question">
-                    <input id="q2" type="checkbox" class="panel">
-                    <div class="plus">+</div>
-                    <label for="q2" class="panel-title">How much wood would a woodchuck chuck?</label>
-                    <div class="panel-content">A woodchuck would chuck all the wood he could chuck, if a woodchuck could chuck wood!</div>
-                </div>
-
-                <div class="faq-question">
-                    <input id="q3" type="checkbox" class="panel">
-                    <div class="plus">+</div>
-                    <label for="q3" class="panel-title">What happens if Pinocchio says, "my nose will grow now"?</label>
-                    <div class="panel-content">Certain questions are better left &nbsp; <a href="https://en.wikipedia.org/wiki/The_Unanswered_Question" target="_blank">unanswered</a></div>
+                    <label for="{{question.id}}" class="panel-title"> {{question.question}} </label>
+                    <div class="panel-content" ng-bind-html="question.answer"></div>
                 </div>
             </div>
+        </div>
 
         </div>
     </section>
@@ -254,39 +173,40 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
+                    <div class="col-lg-12 ">
                         <div class="modal-body">
                             <!-- Details Go Here -->
-                            <h2>Pacman</h2>
-                            <!-- <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p> -->
-                            <!-- <img class="img-responsive" src="//via.placeholder.com/1080x720" alt=""> -->
-                            <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate,
-                                maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                            <p>
-                                <strong>Lorem ipsum dolor sit amet</strong>Lorem ipsum dolor sit amet<a href="">you can dodo</a>.</p>
-                            <ul class="list-inline border-a">
-                                <li><strong>Oynanış: </strong></li>
-                                <li>Boşluk: Oyunu başlat </li>
-                                <li>P: Oyunu durdur </li>
-                                <li><i class="far fa-arrow-alt-circle-down"></i>: Aşağı git </li>
-                                <li><i class="far fa-arrow-alt-circle-left"></i>: Sola git </li>
-                                <li><i class="far fa-arrow-alt-circle-right"></i>: Sağa git </li>
-                                <li><i class="far fa-arrow-alt-circle-up"></i>: Yukarı çık </li>
-                            </ul>
+                            <h2>{{selectedActivityContent.title}}</h2>
+                            <p class="text-content">
+                                <img class="img-responsive" src="{{selectedActivityContent.image.src}}" alt="{{selectedActivityContent.image.alt}}"> {{selectedActivityContent.text}}
+                            </p>
+
+                            <div class="">
+                                <h3 style="text-decoration: underline;">
+                                    <strong>&emsp; Oyun Tuşları &emsp;</strong>
+                                </h3>
+                                <ul class="list-inline list-group">
+                                    <li class="list-group-item" ng-repeat="key in selectedActivityContent.game.controls track by $index" ng-bind-html="key.html" ng-mouseup="keyEvtUp(key.evt)" ng-mousedown="keyEvtDown(key.evt)">
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-6 col-xs-12 ">
                         <div class="embed-responsive embed-responsive-4by3">
-                            <iframe id="iframe-video" class="embed-responsive-item iframe-focus" src="https://www.youtube.com/embed/6TzRNpJdbQk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe id="iframe-video" class="embed-responsive-item iframe-focus" ng-init="selectedActivityContent.video()" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="col-sm-6 col-xs-12 ">
                         <div class="embed-responsive embed-responsive-4by3 ">
-                            <iframe id="iframe-game" class="embed-responsive-item iframe-focus" src="src/games/pacman/pacman.html"></iframe>
+                            <iframe id="iframe-game" class="embed-responsive-item iframe-focus" src="{{selectedActivityContent.game.src}}"></iframe>
                         </div>
                     </div>
+                </div>
+                <div class="row">
+                    <p> <strong>Oyunu tam ekran oynamak için </strong><a target="_blank" href="{{selectedActivityContent.game.src}}">tıklayın</a>.</p>
                 </div>
                 <div class="row">
                     <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Kapat </button>

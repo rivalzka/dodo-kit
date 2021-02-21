@@ -33,3 +33,19 @@ function toggleAccordion() {
 }
 
 items.forEach(item => item.addEventListener('click', toggleAccordion));
+
+function keyEvt2(element, evt) {
+    var event; // The custom event that will be created
+    var element = document.getElementById(element);
+    if (document.createEvent) {
+        event = document.createEvent("HTMLEvents");
+        event.initEvent(evt, true, true);
+        event.eventName = evt;
+        element.dispatchEvent(event);
+    } else {
+        event = document.createEventObject();
+        event.eventName = evt;
+        event.eventType = evt;
+        element.fireEvent("on" + event.eventType, event);
+    }
+}
