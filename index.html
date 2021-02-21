@@ -183,7 +183,7 @@
 
                             <div class="">
                                 <h3 style="text-decoration: underline;">
-                                    <strong>&emsp; Oyun Tuşları &emsp;</strong>
+                                    <strong>&emsp;{{selectedActivityContent.game.name}} Oyun Tuşları &emsp;</strong>
                                 </h3>
                                 <ul class="list-inline list-group">
                                     <li class="list-group-item" ng-repeat="key in selectedActivityContent.game.controls track by $index" ng-bind-html="key.html" ng-mouseup="keyEvtUp(key.evt)" ng-mousedown="keyEvtDown(key.evt)">

@@ -6,6 +6,13 @@ var dodoApp = angular.module("dodoapp", ["ngSanitize"]);
  */
 dodoApp.controller('dataSheet', function($scope) {
 
+    /*
+    TOP MENU: 
+        name: name of site
+        icon: icon of site
+            -src: icon file path
+            -alt: icon description
+    */
     $scope.tabMenu = {
         name: "DODO",
         icon: {
@@ -32,7 +39,7 @@ dodoApp.controller('dataSheet', function($scope) {
         name: name of game
         src: path of game
         controls: define gameplay keyboard keys
-            -html: user interface view 
+            -html: user interface view
             -evt: key event code, that use in game 
     */
     $scope.games = {
@@ -64,7 +71,7 @@ dodoApp.controller('dataSheet', function($scope) {
         name: "Anasayfa",
         header: "DODO",
         desc: "Minicik icat kiti ...",
-        bgColor: ''
+        bgColor: '#333'
     };
     $scope.aboutSection = {
         id: "page-about",
@@ -173,6 +180,13 @@ dodoApp.controller('dataSheet', function($scope) {
 
     ];
 
+    /*
+    F.A.Q. SECTION content defines=
+            id: question unique name
+            question: question text, should be string
+            answer: answer of question,  could be html format for an external links
+                - &nbsp; : html space unicode char
+    */
     $scope.faqContents = [ // A question contents define in '{ }' tags
         {
             id: "q1",
@@ -187,7 +201,7 @@ dodoApp.controller('dataSheet', function($scope) {
         {
             id: "q3",
             question: "What happens if Pinocchio says, \"my nose will grow now\"?",
-            answer: "Certain questions are better left &nbsp; <a href=\"https: //en.wikipedia.org/wiki/The_Unanswered_Question\" target=\"_blank\">unanswered</a>"
+            answer: "Certain questions are better left &nbsp;<a href=\"https: //en.wikipedia.org/wiki/The_Unanswered_Question\" target=\"_blank\">unanswered</a>."
         }
     ];
 
