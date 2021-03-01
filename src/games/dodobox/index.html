@@ -10,7 +10,7 @@
     <meta name="author" content="rivalzka">
 
 
-    <title>{{ title }}</title>
+    <title>DODO BOX</title>
 
     <script src="../../src/jquery.js"></script>
     <script src="asset/scripts/fawesome.js"></script>
@@ -295,35 +295,33 @@
     </style>
 
     <script>
-        document.onkeydown = function(e) {
-            e.preventDefault();
-        }
-        document.onkeyup = function(e) {
-            var key = e.keyCode ? e.keyCode : e.which;
-            // console.log("key: " + key, e);
-            if (key == 87 || key == 119 || key == 38) { //w 
-                if (!game_over) kill_box("up");
-            } else if (key == 65 || key == 97 || key == 37) { //a
-                if (!game_over) kill_box("left");
-            } else if (key == 83 || key == 115 || key == 40) { //s
-                if (!game_over) kill_box("down");
-            } else if (key == 68 || key == 100 || key == 39) { //d
-                if (!game_over) kill_box("right");
-            } else if (key == 32) { //space
-                if (game_over) start();
-            }
-            e.preventDefault();
-        }
-
-        function clear() {
-            list.forEach(function(item, index) {
-                var id = item.id;
-                var thr = item.thr;
-                boom_efect(id);
-                clearInterval(thr);
-            });
-            list = [];
-        }
+        var list = [];
+        var dodobox = undefined;
+        var box_count = 0;
+        var vel_t = 40;
+        var vel_y = 3;
+        var level = 1;
+        var level_limit = 10;
+        var timer;
+        var game_over = true;
+        var sounds = new Audio();
+        var list_keys = [{
+            key: "W",
+            class: "up"
+        }, {
+            key: "A",
+            class: "down"
+        }, {
+            key: "S",
+            class: "left"
+        }, {
+            key: "D",
+            class: "right"
+        }];
+        var files = [],
+            endEvents = [],
+            progressEvents = [],
+            playing = [];
 
         function hasClass(element, className) {
             var class_name = document.getElementById(element).className;
@@ -332,40 +330,56 @@
         }
 
         function kill_box(key) {
-            var itemx = undefined;
-            var idx = -1;
-            list.forEach(function(item, index) {
-                // if (item.val == key) {
-                if (hasClass(item.id, key)) {
-                    var id = item.id;
-                    var thr = item.thr;
-                    boom_efect(id);
+            if (dodobox !== undefined) {
+                if (hasClass(dodobox.id, key)) {
+                    sounds.play("boom");
+                    var thr = dodobox.thr;
+                    boom_efect(dodobox.id);
                     clearInterval(thr);
                     create_box();
-                    idx = index;
-                    itemx = item;
-                    audio().play("boom");
-                    // list.
-                    // console.log("find the box " + key);
+                    var score = Number($("#score").text());
+                    score += 10 * level;
+                    $("#score").html(score);
                 } else {
-                    itemx = undefined;
-                    console.log("not find the box " + key);
+                    finish();
                 }
-            });
-            if (idx > -1) {
-                list.splice(idx, 1);
-            }
-            if (itemx) {
-                var score = Number($("#score").text());
-                score += 10 * level;
-                $("#score").html(score);
             } else {
                 finish();
             }
+            // var itemx = undefined;
+            // var idx = -1;
+            // list.forEach(function(item, index) {
+            //     // if (item.val == key) {
+            //     if (hasClass(item.id, key)) {
+            //         var id = item.id;
+            //         var thr = item.thr;
+            //         boom_efect(id);
+            //         clearInterval(thr);
+            //         create_box();
+            //         idx = index;
+            //         itemx = item;
+            //         audio().play("boom");
+            //         // list.
+            //         // console.log("find the box " + key);
+            //     } else {
+            //         itemx = undefined;
+            //         console.log("not find the box " + key);
+            //     }
+            // });
+            // if (idx > -1) {
+            //     list.splice(idx, 1);
+            // }
+            // if (itemx) {
+            //     var score = Number($("#score").text());
+            //     score += 10 * level;
+            //     $("#score").html(score);
+            // } else {
+            //     finish();
+            // }
         }
 
         function start() {
-            audio().play("start");
+            sounds.play("start");
             timer = setInterval(function() {
                 if (level <= level_limit) {
                     level++;
@@ -382,7 +396,7 @@
         }
 
         function finish() {
-            audio().play("die");
+            sounds.play("die");
             var score = $("#score").text();
             var bestscore = $("#bestscore").text();
             if (Number(score) > Number(bestscore)) {
@@ -402,27 +416,7 @@
             }, 1000);
         }
 
-        var list_keys = [{
-            key: "W",
-            class: "up"
-        }, {
-            key: "A",
-            class: "down"
-        }, {
-            key: "S",
-            class: "left"
-        }, {
-            key: "D",
-            class: "right"
-        }];
-        var list = [];
-        var box_count = 0;
-        var vel_t = 40;
-        var vel_y = 3;
-        var level = 1;
-        var level_limit = 10;
-        var timer;
-        var game_over = true;
+
 
         function getViewport() {
 
@@ -479,7 +473,7 @@
             if (x <= 0) x += vmin(6);
 
             $("#box" + box_count).css({
-                top: 0,
+                top: -$("#" + id).height,
                 left: x
             });
 
@@ -501,11 +495,13 @@
                     });
                 }
             }, (vel_t - 3 * level));
-            list[box_count] = {
+            var obj = {
                 "id": id,
                 "val": key,
                 "thr": interval
             };
+            list[box_count] = obj;
+            dodobox = obj;
             box_count++;
         }
         var audio_files = [
@@ -514,14 +510,8 @@
             ["boom", "./asset/sounds/tık.wav"],
         ];
 
-        var files = [],
-            endEvents = [],
-            progressEvents = [],
-            playing = [];
+
         var audio = function() {
-
-
-
             function load(name, path, cb) {
                 // console.log(name + " : load");
                 files[name] = document.createElement("audio");
@@ -605,13 +595,14 @@
             };
         };
 
+
         function load(arr, callback) {
 
             if (arr.length === 0) {
                 callback();
             } else {
                 var x = arr.pop();
-                audio().load(x[0], x[1], function() {
+                sounds.load(x[0], x[1], function() {
                     load(arr, callback);
                 });
             }
@@ -624,6 +615,37 @@
 
         window.onload = function() {
             load(audio_files, function() { /*loaded();*/ });
+        }
+
+        document.onkeydown = function(e) {
+            e.preventDefault();
+        }
+
+        document.onkeyup = function(e) {
+            var key = e.keyCode ? e.keyCode : e.which;
+            // console.log("key: " + key, e);
+            if (key == 87 || key == 119 || key == 38) { //w 
+                if (!game_over) kill_box("up");
+            } else if (key == 65 || key == 97 || key == 37) { //a
+                if (!game_over) kill_box("left");
+            } else if (key == 83 || key == 115 || key == 40) { //s
+                if (!game_over) kill_box("down");
+            } else if (key == 68 || key == 100 || key == 39) { //d
+                if (!game_over) kill_box("right");
+            } else if (key == 32) { //space
+                if (game_over) start();
+            }
+            e.preventDefault();
+        }
+
+        function clear() {
+            list.forEach(function(item, index) {
+                var id = item.id;
+                var thr = item.thr;
+                boom_efect(id);
+                clearInterval(thr);
+            });
+            list = [];
         }
     </script>
 
