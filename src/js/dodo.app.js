@@ -85,7 +85,7 @@ dodoApp.controller('dataSheet', function($scope) {
 
             ]
         },
-        rocket: {
+        mario: {
             name: "Mario",
             src: "src/games/mario/index.html",
             controls: [
