@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="src/css/style.css">
 </head>
 
-<body id="{{homeSection.id}}" class="index theme assets" ng-app="dodoapp" ng-controller="dataSheet" ng-init="">
+<body id="{{homeSection.id}}" class="index theme assets" ng-app="dodoapp" ng-controller="dataSheet" ng-init="initDodo()">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink border-a">
@@ -31,7 +31,7 @@
                 <span class="icon-bar"></span>
             </button>
                 <a class="navbar-brand page-scroll" href="#{{homeSection.id}}">
-                    <img src="{{tabMenu.icon.src}}" alt="{{tabMenu.icon.alt}}"> {{tabMenu.name}}
+                    <img ng-src="{{tabMenu.icon.src}}" alt="{{tabMenu.icon.alt}}"> {{tabMenu.name}}
                 </a>
 
             </div>
@@ -49,11 +49,12 @@
 
     <!-- Header -->
     <header style="--intro-bg-img: url({{dodoBoardImageBackground.src}})">
+        <!-- <header> -->
         <div class="container intro">
             <div class="intro-text">
                 <div class="intro-lead-in">{{homeSection.header}}</div>
                 <div class="intro-heading">{{homeSection.desc}}</div>
-                <img src="{{dodoBoardImage.src}}" alt="{{dodoBoardImage.alt}}" class="img-responsive border-a">
+                <img ng-src="{{dodoBoardImage.src}}" alt="{{dodoBoardImage.alt}}" class="img-responsive border-a">
             </div>
             <div class="row">
 
@@ -100,7 +101,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="{{activity.content.image.src}}" class="img-responsive" alt="{{activity.content.image.alt}}">
+                        <img ng-src="{{activity.content.image.src}}" class="img-responsive" alt="{{activity.content.image.alt}}">
                     </a>
                     <div class="activities-caption">
                         <h4>{{activity.title}}</h4>
@@ -178,7 +179,7 @@
                             <!-- Details Go Here -->
                             <h2>{{selectedActivityContent.title}}</h2>
                             <p class="text-content">
-                                <img class="img-responsive" src="{{selectedActivityContent.image.src}}" alt="{{selectedActivityContent.image.alt}}"> {{selectedActivityContent.text}}
+                                <img class="img-responsive" ng-src="{{selectedActivityContent.image.src}}" alt="{{selectedActivityContent.image.alt}}"> {{selectedActivityContent.text}}
                             </p>
 
                             <div class="">
@@ -201,7 +202,7 @@
                     </div>
                     <div class="col-sm-6 col-xs-12 ">
                         <div class="embed-responsive embed-responsive-4by3 ">
-                            <iframe id="iframe-game" class="embed-responsive-item iframe-focus" src="{{selectedActivityContent.game.src}}"></iframe>
+                            <iframe id="iframe-game" class="embed-responsive-item iframe-focus" ng-src="{{selectedActivityContent.game.src}}"></iframe>
                         </div>
                     </div>
                 </div>

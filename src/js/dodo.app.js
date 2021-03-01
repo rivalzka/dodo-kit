@@ -6,6 +6,12 @@ var dodoApp = angular.module("dodoapp", ["ngSanitize"]);
  */
 dodoApp.controller('dataSheet', function($scope) {
 
+    $scope.initDodo = () => {
+        //     let root = document.documentElement;
+        //     root.style.setProperty('--intro-bg-img', "url(" + $scope.dodoBoardImageBackground.src + ")");
+        //     console.log(root);
+    }
+
     /*
     TOP MENU: 
         name: name of site
@@ -77,6 +83,19 @@ dodoApp.controller('dataSheet', function($scope) {
                 { html: "'BOŞLUK' : Işığı yak", evt: 32 },
                 { html: "<i class='far fa-arrow-alt-circle-up'></i> : İlerle", evt: 38 },
 
+            ]
+        },
+        rocket: {
+            name: "Mario",
+            src: "src/games/mario/index.html",
+            controls: [
+                // { html: "'BOŞLUK' : Işığı yak", evt: 32 },
+                { html: "<i class='far fa-arrow-alt-circle-right'></i> : İlerle", evt: 39 },
+                { html: "<i class='far fa-arrow-alt-circle-left'></i> : Geri gel", evt: 37 },
+                { html: "<i class='far fa-arrow-alt-circle-up'></i> : Zıpla", evt: 38 },
+                { html: "<i class='far fa-arrow-alt-circle-down'></i> : Eğil", evt: 40 },
+                { html: "'F' : Hızlan", evt: 70 },
+                { html: "'G' : Ateş Et", evt: 71 },
             ]
         },
     };
@@ -230,6 +249,23 @@ dodoApp.controller('dataSheet', function($scope) {
                     "expedita beatae cupiditate,maiores repudiandae, nostrum, reiciendis facere nemo!",
                 video: "https://www.youtube.com/embed/6TzRNpJdbQk",
                 game: $scope.games.rocket,
+                image: {
+                    src: "//via.placeholder.com/1080x720",
+                    alt: "etkinlik resmi"
+                },
+            }
+        },
+        {
+            //Activity 
+            title: "Etkinlik: Mario",
+            desc: "Bu içerikte Dodo Kutuları'nı yakalıyoruz ... ",
+            content: {
+                title: "Mario",
+                text: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit" + " " +
+                    "Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia" + " " +
+                    "expedita beatae cupiditate,maiores repudiandae, nostrum, reiciendis facere nemo!",
+                video: "https://www.youtube.com/embed/6TzRNpJdbQk",
+                game: $scope.games.mario,
                 image: {
                     src: "//via.placeholder.com/1080x720",
                     alt: "etkinlik resmi"
