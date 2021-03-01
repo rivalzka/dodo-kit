@@ -221,7 +221,7 @@ function MarioGame() {
     };
 
     this.showInstructions = function() {
-        gameUI.writeText('Kontroller: Yön tuşları ile hareket et,boşluk ile zıpla, shift ile koş, ctrl ile ateş et', 30, 30);
+        gameUI.writeText('Kontroller: "YÖN TUŞLARI" ile hareket et,"BOŞLUK" ile zıpla, "F ile koş, "G" ile ateş et', 30, 30);
         gameUI.writeText('İpucu: koşarken daha yükseğe zıplarsınız.', 30, 60);
     };
 
