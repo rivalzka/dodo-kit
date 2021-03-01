@@ -1,160 +1,73 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="keywords" content="web game, oyun, game online, oyun online, online, online games, games, free, html, html5, css, css3, javascript, jquery" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="rivalzka">
 
-    <meta name="viewport" content="width=device-width, 
-    user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script> -->
-    <script src="../../src/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
-    <style type="text/css">
-        body {
-            margin: 0;
-            padding: 0;
-            background: #000;
-            display: flex;
-            justify-content: center;
-            overflow: hidden;
-        }
-        
-        canvas {
-            display: block;
-            /* //margin: 0 auto; */
-            background: #fff;
-        }
-        
-        #pacman {
-            display: inline-flex;
-        }
-    </style>
+    <title>{{ title }}</title>
 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <!-- <script src=".../public/javascripts/fawesome.js"></script> -->
+
+    <!-- <link rel="stylesheet" href=".../public/stylesheets/fawesome.css"> -->
+    <!-- <link rel="stylesheet" href=".../public/stylesheets/style.css"> -->
 </head>
 
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
-    <div id="pacman">
-        <canvas> </canvas>
+    <div class="body">
+        <div class="container-game-body">
+            <div class="container-game-box">
+                <div id="pacman"></div>
+            </div>
+        </div>
     </div>
-    <script>
-        window.requestAnimFrame = (function() {
-            return window.requestAnimationFrame ||
-                window.webkitRequestAnimationFrame ||
-                window.mozRequestAnimationFrame ||
-                window.oRequestAnimationFrame ||
-                window.msRequestAnimationFrame ||
-                function(callback) {
-                    window.setTimeout(callback, 1000 / 60);
-                };
-        })();
 
-        function setloop(loop) {
-            if (this.loop !== undefined) {
-                console.log("get loop");
-                return this.loop;
-            } else if (loop !== undefined) {
-                console.log("set loop" + (typeof loop));
-                this.loop = loop;
-                return this.loop;
-            }
-
+    <div class="back-img"></div>
+    <style>
+        #pacman {
+            background-color: black;
+            height: 600px;
+            width: 500px;
+            border-radius: 5px;
+            margin: 5px auto;
+            margin-bottom: 20px;
         }
-        // all the code goes here
-        var POP = {
-
-            // set up some initial values
-            WIDTH: 320,
-            HEIGHT: 400,
-            // we'll set the rest of these
-            // in the init function
-            RATIO: null,
-            currentWidth: null,
-            currentHeight: null,
-            canvas: null,
-            ctx: null,
-
-            init: function() {
-
-                // the proportion of width to height
-                POP.RATIO = POP.WIDTH / POP.HEIGHT;
-                // these will change when the screen is resized
-                POP.currentWidth = POP.WIDTH;
-                POP.currentHeight = POP.HEIGHT;
-                // this is our canvas element
-                POP.canvas = document.getElementsByTagName('canvas')[0];
-                // setting this is important
-                // otherwise the browser will
-                // default to 320 x 200
-                POP.canvas.width = POP.WIDTH;
-                POP.canvas.height = POP.HEIGHT;
-                // the canvas context enables us to 
-                // interact with the canvas api
-                POP.ctx = POP.canvas.getContext('2d');
-
-                // we're ready to resize
-                POP.resize();
-
-                var el = document.getElementById("pacman");
-
-                if (Modernizr.canvas && Modernizr.localstorage &&
-                    Modernizr.audio && (Modernizr.audio.ogg || Modernizr.audio.mp3)) {
-                    window.setTimeout(function() {
-                        PACMAN.init(el, "");
-                    }, 0);
-                } else {
-                    el.innerHTML = "Sorry, needs a decent browser<br /><small>" +
-                        "(firefox 3.6+, Chrome 4+, Opera 10+ and Safari 4+)</small>";
-                }
-
-                //  var 
-                //setloop();
-                //requestAnimFrame(setloop);
-
-            },
-
-            resize: function() {
-
-                var min = Math.min(window.innerHeight, window.innerWidth);
-
-                POP.currentHeight = min;
-                // resize the width in proportion
-                // to the new height
-                POP.currentWidth = POP.currentHeight * POP.RATIO;
-
-                // this will create some extra space on the
-                // page, allowing us to scroll past
-                // the address bar, thus hiding it.
-                if (POP.android || POP.ios) {
-                    document.body.style.height = (min + 50) + 'px';
-
-                } else {
-                    console.log("desktop");
-                }
-
-                // set the new canvas style width and height
-                // note: our canvas is still 320 x 480, but
-                // we're essentially scaling it with CSS
-                POP.canvas.style.width = POP.currentWidth + 'px';
-                POP.canvas.style.height = POP.currentHeight + 'px';
-
-                // we use a timeout here because some mobile
-                // browsers don't fire if there is not
-                // a short delay
-                window.setTimeout(function() {
-                    window.scrollTo(0, 1);
-                }, 1);
-            }
+    </style>
 
 
-        };
-        // POP.init();
-        window.addEventListener('load', POP.init, false);
-        window.addEventListener('resize', POP.resize, false);
+    <script>
+        /*
+                var couponWindow = {
+                    width: $(window).width(),
+                    height: $(window).height(),
+                    resizing: false
+                };
+                var $w = $(window);
+                $w.resize(function() {
+                    if ($w.width() != couponWindow.width && !couponWindow.resizing) {
+                        couponWindow.resizing = true;
+                        window.resizeTo(couponWindow.width, $w.height());
+                    }
+                    couponWindow.resizing = false;
+                });*/
+        /*thanks for resource  who https://github.com/daleharvey */
+        /*jslint browser: true, undef: true, eqeqeq: true, nomen: true, white: true */
+        /*global window: false, document: false */
 
+        /*
+         * fix looped audio
+         * add fruits + levels
+         * fix what happens when a ghost is eaten (should go back to base)
+         * do proper ghost mechanics (blinky/wimpy etc)
+         */
 
         var NONE = 4,
             UP = 3,
@@ -1000,7 +913,7 @@
                 ctx.font = "18px Calibri";
                 var width = ctx.measureText(text).width,
                     x = ((map.width * map.blockSize) - width) / 2;
-                ctx.fillText(text, x, (map.height * 9) /** 10) + 75*/ );
+                ctx.fillText(text, x, (map.height * 10) + 75);
             }
 
             function soundDisabled() {
@@ -1027,12 +940,11 @@
             }
 
             function keyDown(e) {
-                // console.log("pacman keydown evt: ", e);
-                if (e.keyCode === KEY.N || e.keyCode === KEY.SPACEBAR) {
+                if (e.keyCode === KEY.N) {
                     startNewGame();
                 } else if (e.keyCode === KEY.S) {
-                    // audio.disableSound();
-                    // localStorage["soundDisabled"] = !soundDisabled();
+                    audio.disableSound();
+                    localStorage["soundDisabled"] = !soundDisabled();
                 } else if (e.keyCode === KEY.P && state === PAUSE) {
                     audio.resume();
                     map.draw(ctx);
@@ -1163,7 +1075,7 @@
                 } else if (state === WAITING && stateChanged) {
                     stateChanged = false;
                     map.draw(ctx);
-                    dialog("Yeni oyun için \"BOŞLUK\" tuşuna basınız ");
+                    dialog("Yeni oyun için \"N\" tuşuna basınız ");
                 } else if (state === EATEN_PAUSE &&
                     (tick - timerStart) > (Pacman.FPS / 3)) {
                     map.draw(ctx);
@@ -1225,15 +1137,13 @@
             function init(wrapper, root) {
 
                 var i, len, ghost,
-                    canvas = document.getElementsByTagName('canvas')[0],
-                    blockSize = canvas.width / 19;
-                console.log(blockSize);
-                //   canvas = document.createElement("canvas");
+                    blockSize = wrapper.offsetWidth / 19,
+                    canvas = document.createElement("canvas");
 
-                /* canvas.setAttribute("width", (blockSize * 19) + "px");
-                 canvas.setAttribute("height", (blockSize * 22) + 30 + "px");*/
+                canvas.setAttribute("width", (blockSize * 19) + "px");
+                canvas.setAttribute("height", (blockSize * 22) + 30 + "px");
 
-                //wrapper.appendChild(canvas);
+                wrapper.appendChild(canvas);
 
                 ctx = canvas.getContext('2d');
 
@@ -1299,7 +1209,7 @@
 
                 document.addEventListener("keydown", keyDown, true);
                 document.addEventListener("keypress", keyPress, true);
-                //setloop(mainLoop);
+
                 timer = window.setInterval(mainLoop, 1000 / Pacman.FPS);
             };
 
@@ -1786,21 +1696,20 @@
             return newObj;
         };
 
-        /*   $(function() {
-               var el = document.getElementById("pacman");
+        $(function() {
+            var el = document.getElementById("pacman");
 
-               if (Modernizr.canvas && Modernizr.localstorage &&
-                   Modernizr.audio && (Modernizr.audio.ogg || Modernizr.audio.mp3)) {
-                   window.setTimeout(function() {
-                       PACMAN.init(el, "");
-                   }, 0);
-               } else {
-                   el.innerHTML = "Sorry, needs a decent browser<br /><small>" +
-                       "(firefox 3.6+, Chrome 4+, Opera 10+ and Safari 4+)</small>";
-               }
-           });*/
+            if (Modernizr.canvas && Modernizr.localstorage &&
+                Modernizr.audio && (Modernizr.audio.ogg || Modernizr.audio.mp3)) {
+                window.setTimeout(function() {
+                    PACMAN.init(el, "");
+                }, 0);
+            } else {
+                el.innerHTML = "Sorry, needs a decent browser<br /><small>" +
+                    "(firefox 3.6+, Chrome 4+, Opera 10+ and Safari 4+)</small>";
+            }
+        });
     </script>
-
 </body>
 
 </html>

@@ -1,7 +1,7 @@
-@font-face {
+/* @font-face {
     font-family: SuperMario256;
     src: url('../fonts/SuperMario256.ttf');
-}
+} */
 
 body {
     max-width: 100vw;
@@ -14,14 +14,22 @@ body {
     overflow: hidden;
 }
 
+.main-wrapper {
+    position: absolute;
+    bottom: 0;
+}
+
 .start-screen {
     width: 1280px;
     height: 530px;
-    margin: 0 auto;
+    /* width: 100vw;
+    height: 42.4vw; */
     border: 1px solid black;
     background: url('../images/start-screen.png');
     background-size: cover;
     position: absolute;
+    top: -530px;
+    /* left: 0; */
 }
 
 .editor-screen {
@@ -269,13 +277,20 @@ body {
 }
 
 .start-btn {
+    /* width: 16vw;
+    height: 4vw; */
     width: 200px;
     height: 50px;
     color: #ffffff;
     background: url('../images/start-btn.png');
+    background-size: cover;
     position: absolute;
+    /* bottom: 8vmin;
+    left: 42vmin; */
+    /* bottom: 100px;
+    left: 252px; */
     bottom: 100px;
-    left: 252px;
+    left: 530px;
     border: 2px solid black;
 }
 
@@ -288,6 +303,7 @@ body {
     left: 530px;
     color: #ffffff;
     border: 2px solid black;
+    display: none;
 }
 
 .created-btn {
@@ -299,6 +315,7 @@ body {
     left: 810px;
     color: #ffffff;
     border: 2px solid black;
+    display: none;
 }
 
 .back-btn {

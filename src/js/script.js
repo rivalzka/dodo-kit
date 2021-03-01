@@ -49,3 +49,6 @@ function keyEvt2(element, evt) {
         element.fireEvent("on" + event.eventType, event);
     }
 }
+
+
+// document.addEventListener("touchmove", function(e) { e.preventDefault() }, !1);

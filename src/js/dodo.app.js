@@ -70,6 +70,15 @@ dodoApp.controller('dataSheet', function($scope) {
 
             ]
         },
+        rocket: {
+            name: "Rocket",
+            src: "src/games/rocket/index.html",
+            controls: [
+                { html: "'BOŞLUK' : Işığı yak", evt: 32 },
+                { html: "<i class='far fa-arrow-alt-circle-up'></i> : İlerle", evt: 38 },
+
+            ]
+        },
     };
 
 
@@ -204,6 +213,23 @@ dodoApp.controller('dataSheet', function($scope) {
                     "expedita beatae cupiditate,maiores repudiandae, nostrum, reiciendis facere nemo!",
                 video: "https://www.youtube.com/embed/6TzRNpJdbQk",
                 game: $scope.games.dodobox,
+                image: {
+                    src: "//via.placeholder.com/1080x720",
+                    alt: "etkinlik resmi"
+                },
+            }
+        },
+        {
+            //Activity 
+            title: "Etkinlik: Roket Fırlatıyoruz",
+            desc: "Bu içerikte Dodo Kutuları'nı yakalıyoruz ... ",
+            content: {
+                title: "Roket",
+                text: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit" + " " +
+                    "Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia" + " " +
+                    "expedita beatae cupiditate,maiores repudiandae, nostrum, reiciendis facere nemo!",
+                video: "https://www.youtube.com/embed/6TzRNpJdbQk",
+                game: $scope.games.rocket,
                 image: {
                     src: "//via.placeholder.com/1080x720",
                     alt: "etkinlik resmi"

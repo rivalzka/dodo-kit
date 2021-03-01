@@ -118,6 +118,10 @@ function MarioGame() {
                     //in touch events, same area acts as sprint and bullet key
                     keys[16] = true; //shift key
                     keys[17] = true; //ctrl key
+                    keys[70] = true;
+                    keys[71] = true;
+                    keys[102] = true;
+                    keys[103] = true;
                 }
                 if (touches[i].pageX > 1080 && touches[i].pageX < 1280) {
                     keys[32] = true; //space
@@ -139,6 +143,12 @@ function MarioGame() {
                 if (touches[i].pageX > 640 && touches[i].pageX <= 1080) {
                     keys[16] = false;
                     keys[17] = false;
+                    keys[70] = false;
+                    keys[71] = false;
+                    keys[102] = false;
+                    keys[103] = false;
+
+
                 }
                 if (touches[i].pageX > 1080 && touches[i].pageX < 1280) {
                     keys[32] = false;
@@ -211,8 +221,8 @@ function MarioGame() {
     };
 
     this.showInstructions = function() {
-        gameUI.writeText('Controls: Arrow keys for direction, shift to run, ctrl for bullets', 30, 30);
-        gameUI.writeText('Tip: Jumping while running makes you jump higher', 30, 60);
+        gameUI.writeText('Kontroller: Yön tuşları ile hareket et,boşluk ile zıpla, shift ile koş, ctrl ile ateş et', 30, 30);
+        gameUI.writeText('İpucu: koşarken daha yükseğe zıplarsınız.', 30, 60);
     };
 
     this.renderMap = function() {
@@ -722,15 +732,15 @@ function MarioGame() {
             }
         }
 
-        if (keys[16]) {
-            //shift key
+        if (keys[16] || keys[70] || keys[102]) {
+            //shift key + F key
             mario.speed = 4.5;
         } else {
             mario.speed = 3;
         }
 
-        if (keys[17] && mario.type == 'fire') {
-            //ctrl key
+        if ((keys[17] || keys[71] || keys[103]) && mario.type == 'fire') {
+            //ctrl key + G key
             if (!bulletFlag) {
                 bulletFlag = true;
                 var bullet = new Bullet();

@@ -10,11 +10,11 @@
     <meta name="author" content="rivalzka">
 
 
-    <title>{{ title }}</title>
+    <title>Hayvanlar Alemi</title>
 
-    <script src="../../src/jquery.js"></script>
-    <script src="../../src/script.js"></script>
-    <script src="../../src/fawesome.js"></script>
+    <!-- <script src="../jquery.js"></script> -->
+    <script src="../script.js"></script>
+    <script src="../fawesome.js"></script>
     <style>
         /* game css */
         
@@ -187,7 +187,7 @@
         
         div.gallery ul {
             list-style-type: none;
-            margin-left: 35px;
+            margin-left: 0;
         }
         /* animation */
         
@@ -236,39 +236,162 @@
             left: 65%;
             background: #666409;
         }
+        
+        div.gallery img:hover {
+            cursor: pointer;
+        }
+        
+        .keyfa {
+            position: relative;
+            top: -34px;
+            left: calc(65px - 15px);
+            color: #F1EE14;
+            z-index: -1;
+            font-size: 24px;
+        }
+        
+        .border-a {
+            border: solid #F1EE14;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            border-width: 5px;
+        }
+        /* .fa-key::before {
+            position: fixed;
+            top: -34px;
+            left: calc(65px - 15px);
+            color: red;
+            z-index: 6;
+            font-size: 24px;
+        } */
+        
+        @media screen and (max-width: 720px) {
+            div.gallery ul li {
+                position: relative;
+                float: left;
+                width: 100px;
+                height: 100px;
+                margin: 5px;
+                padding: 5px;
+                z-index: 0;
+            }
+            div.gallery ul li img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                border: 1px solid #dddddd;
+                padding: 5px;
+                width: 100px;
+                height: 100px;
+                background: #f1ee14;
+            }
+            div.gallery ul li img:target {
+                width: 200px;
+                height: 200px;
+                margin-top: -130px;
+                margin-left: -130px;
+                top: 65%;
+                left: 65%;
+                background: #666409;
+            }
+            .keyfa {
+                position: relative;
+                top: -34px;
+                left: calc(50px - 15px);
+                color: #F1EE14;
+                z-index: -1;
+                font-size: 24px;
+            }
+            div.gallery ul {
+                margin-left: 0;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            div.gallery ul li {
+                position: relative;
+                float: left;
+                width: 70px;
+                height: 70px;
+                margin: 5px;
+                padding: 5px;
+                z-index: 0;
+            }
+            div.gallery ul li img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                border: 1px solid #dddddd;
+                padding: 5px;
+                width: 70px;
+                height: 70px;
+                background: #f1ee14;
+            }
+            div.gallery ul li img:target {
+                width: 140px;
+                height: 140px;
+                margin-top: -75px;
+                margin-left: -70px;
+                top: 65%;
+                left: 65%;
+                background: #666409;
+            }
+            .keyfa {
+                position: relative;
+                top: -34px;
+                left: calc(35px - 15px);
+                color: #F1EE14;
+                z-index: -1;
+                font-size: 24px;
+            }
+            div.gallery ul {
+                margin-left: 0;
+            }
+        }
     </style>
 </head>
 
-<body>
+<body onload="init_animals();">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <!-- <script src="../javascripts/script.js"></script> -->
-    <div class="Modal-Background ">
+    <!-- <div class="Modal-Background ">
         <div class="Center-Block Absolute-Center is-Fixed is-Variable Modal" id="Fixed-Modal">
             <div class="Center-Content">
                 <h4 class="Title">Hayvanlar Alemi</h4>
 
                 <p>Sol yön tuşu ile kuşu, yukarı yön tuşu ile köpeği, sağ yön tuşu ile kurbağayı aşağı yön tuşu ile kediyi çağırabilirsiniz. </p>
                 <p><a href="#" class="Shaw-Button ">Eğitim Videosu</a> </p>
-                <!-- <p><a href="#" class="Shaw-Button trigger-Resize">Resize Me!</a></p>-->
+                <p><a href="#" class="Shaw-Button trigger-Resize">Resize Me!</a></p>
 
                 <p><a class="Shaw-Button toggle-Modal">OYNA</a></p>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="body">
         <div class="container-game-body">
-            <div class="container-game-box">
+            <div class="container-game-box ">
                 <div>
                     <div class="wrapper">
                         <div class="gallery">
                             <ul>
-                                <li><img id="icocat" src="asset/images/ico-cad.png"></li>
-                                <li><img id="icodog" src="asset/images/ico-dog.png"></li>
-                                <li><img id="icofog" src="asset/images/ico-forg.png"></li>
-                                <li><img id="icobrd" src="asset/images/ico-brid.png"></li>
+                                <li>
+                                    <img id="kedi" src="asset/images/ico-cad.png" onclick="cat_open();">
+                                    <i class="far fa-arrow-alt-circle-down keyfa"></i>
+                                </li>
+                                <li>
+                                    <img id="kopek" src="asset/images/ico-dog.png" onclick="dog_open();">
+                                    <i class="far fa-arrow-alt-circle-up keyfa"></i>
+                                </li>
+                                <li>
+                                    <img id="kurbaga" src="asset/images/ico-forg.png" onclick="frog_open();">
+                                    <i class="far fa-arrow-alt-circle-right keyfa"></i>
+                                </li>
+                                <li>
+                                    <img id="kus" src="asset/images/ico-brid.png" onclick="bird_open();">
+                                    <i class="far fa-arrow-alt-circle-left keyfa"></i>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -311,6 +434,13 @@
         var dogsound = document.getElementById('dogsound');
         var frogsound = document.getElementById('frogsound');
         var birdsound = document.getElementById('birdsound');
+
+        function init_animals() {
+            if (location.href.indexOf("#") != -1) {
+                location.href = "";
+            }
+            // console.log(location.href);
+        }
 
         function play_cat() {
             disabled_sounds();
@@ -557,28 +687,28 @@
 
         function cat_open() {
             check_animals();
-            location.href = "#icocat";
+            location.href = "#kedi";
             cat.classList.remove("hideanim");
             play_cat();
         }
 
         function dog_open() {
             check_animals();
-            location.href = "#icodog";
+            location.href = "#kopek";
             dog.classList.remove("hideanim");
             play_dog();
         }
 
         function bird_open() {
             check_animals();
-            location.href = "#icobrd";
+            location.href = "#kus";
             bird.classList.remove("hideanim");
             play_bird();
         }
 
         function frog_open() {
             check_animals();
-            location.href = "#icofog";
+            location.href = "#kurbaga";
             frog.classList.remove("hideanim");
             play_frog();
         }
