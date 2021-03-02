@@ -216,13 +216,23 @@ dodoApp.controller('dataSheet', function($scope) {
     $scope.selectActivity = (content) => {
         $scope.resetSelectActivity();
         $scope.selectedActivityContent = content;
-        $("#iframe-video").attr('src', content.video);
+        $("#iframe-game").attr('src', $scope.selectedActivityContent.game.src);
+        $("#iframe-video").attr('src', $scope.selectedActivityContent.video);
     };
     $scope.resetSelectActivity = () => {
         $scope.selectedActivityContent = {};
         $("#iframe-video").attr('src', "");
         $("#iframe-game").attr('src', "");
     };
+    $scope.video = () => {
+        // document.getElementById('#iframe-video').src = $scope.selectedActivityContent.video;
+        // $("#iframe-video").attr('src', $scope.selectedActivityContent.video);
+    }
+    $scope.game = () => {
+        // document.getElementById('#iframe-game').src = $scope.selectedActivityContent.game.src;
+        // $("#iframe-game").attr('src', $scope.selectedActivityContent.game.src);
+        // console.log("game change")
+    }
 
     /*
     ACTIVITY SECTION content defines=

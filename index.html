@@ -197,20 +197,20 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-12 ">
                         <div class="embed-responsive embed-responsive-4by3">
-                            <iframe id="iframe-video" class="embed-responsive-item iframe-focus" ng-init="selectedActivityContent.video()" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe id="iframe-video" class="embed-responsive-item iframe-focus" ng-init="video()" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="col-sm-6 col-xs-12 ">
                         <div class="embed-responsive embed-responsive-4by3 ">
-                            <iframe id="iframe-game" class="embed-responsive-item iframe-focus" ng-src="{{selectedActivityContent.game.src}}"></iframe>
+                            <iframe id="iframe-game" class="embed-responsive-item iframe-focus" ng-init="game()" src=""></iframe>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <p> <strong>Oyunu tam ekran oynamak için </strong><a target="_blank" href="{{selectedActivityContent.game.src}}">tıklayın</a>.</p>
+                <div class="row ">
+                    <p> <strong>Oyunu tam ekran oynamak için </strong><a target="_blank " href="{{selectedActivityContent.game.src}} ">tıklayın</a>.</p>
                 </div>
-                <div class="row">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Kapat </button>
+                <div class="row ">
+                    <button type="button " class="btn btn-primary " data-dismiss="modal "><i class="fa fa-times "></i> Kapat </button>
                 </div>
             </div>
         </div>
