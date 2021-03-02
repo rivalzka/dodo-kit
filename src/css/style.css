@@ -35,7 +35,7 @@
 .theme {
     --bg-color: var(--clr-lighttext);
     --fg-color: var(--clr-black);
-    --navbar-margin: 0.5rem 2rem 1rem 2rem;
+    --navbar-margin: 15px 15px 15px 10px;
     --navbar-bg-color: var(--clr-blue);
     --navbar-fg-color: var(--clr-lighttext);
     --navbar-fg-hvr-color: var(--clr-skybluelight);
@@ -150,6 +150,14 @@ p {
     color: var(--navbar-fg-color);
     font-family: var(--head-font);
     margin: var(--navbar-margin);
+}
+
+.scrolled {
+    opacity: 0.5;
+}
+
+.navbar-default:hover {
+    opacity: 1;
 }
 
 .navbar-default .navbar-brand {
@@ -638,8 +646,6 @@ ul.social-buttons li a:active {
     color: var(--modal-fg-color);
 }
 
-.activity-modal .close-modal {}
-
 .activity-modal .container {
     background-color: var(--modal-bg-color);
     width: 100%;
@@ -741,9 +747,11 @@ ul.social-buttons li a:active {
     position: absolute;
     top: 25px;
     right: 25px;
-    width: 75px;
-    height: 75px;
+    width: 85px;
+    height: 85px;
+    padding: 5px;
     background-color: transparent;
+    border: 3px solid var(--modal-fg-color);
     cursor: pointer;
 }
 
@@ -753,7 +761,7 @@ ul.social-buttons li a:active {
 
 .activity-modal .close-modal .lr {
     z-index: 1051;
-    width: 1px;
+    width: 3px;
     height: 75px;
     margin-left: 35px;
     /* background-color: #222; */
@@ -765,7 +773,7 @@ ul.social-buttons li a:active {
 
 .activity-modal .close-modal .lr .rl {
     z-index: 1052;
-    width: 1px;
+    width: 3px;
     height: 75px;
     /* background-color: #222; */
     background-color: var(--modal-fg-color);
