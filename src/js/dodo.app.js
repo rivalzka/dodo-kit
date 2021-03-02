@@ -119,6 +119,19 @@ dodoApp.controller('dataSheet', function($scope) {
                 { html: "<i class='far fa-arrow-alt-circle-right'></i> : Trampet", evt: 39 },
             ]
         },
+        turkeymap: {
+            name: "Türkiye Bölgeler",
+            src: "src/games/turkey/index.html",
+            controls: [
+                { html: "'W' : Karadeniz Bölgesi", evt: 87 },
+                { html: "'A' : Marmara Bölgesi", evt: 65 },
+                { html: "'S' : Ege Bölgesi", evt: 83 },
+                { html: "'D' : Akdeniz Bölgesi", evt: 68 },
+                { html: "'F' : Güneydoğu Anadolu Bölgesi", evt: 70 },
+                { html: "'G' : Doğu Anadolu Bölgesi", evt: 71 },
+                { html: "'BOSLUK' : İç Anadolu Bölgesi", evt: 32 },
+            ]
+        },
     };
 
 
@@ -262,7 +275,7 @@ dodoApp.controller('dataSheet', function($scope) {
         {
             //Activity 
             title: "Etkinlik: Roket Fırlatıyoruz",
-            desc: "Bu içerikte Dodo Kutuları'nı yakalıyoruz ... ",
+            desc: "Bu içerikte  ... ",
             content: {
                 title: "Roket",
                 text: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit" + " " +
@@ -279,7 +292,7 @@ dodoApp.controller('dataSheet', function($scope) {
         {
             //Activity 
             title: "Etkinlik: Mario",
-            desc: "Bu içerikte Dodo Kutuları'nı yakalıyoruz ... ",
+            desc: "Bu içerikte  ... ",
             content: {
                 title: "Mario",
                 text: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit" + " " +
@@ -296,7 +309,7 @@ dodoApp.controller('dataSheet', function($scope) {
         {
             //Activity 
             title: "Etkinlik: Bateri Çal",
-            desc: "Bu içerikte Dodo Kutuları'nı yakalıyoruz ... ",
+            desc: "Bu içerikte  ... ",
             content: {
                 title: "Bateri Çal",
                 text: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit" + " " +
@@ -313,7 +326,7 @@ dodoApp.controller('dataSheet', function($scope) {
         {
             //Activity 
             title: "Etkinlik: Hayvanlar Alemi",
-            desc: "Bu içerikte Dodo Kutuları'nı yakalıyoruz ... ",
+            desc: "Bu içerikte   ... ",
             content: {
                 title: "Hayvanlar Alemi",
                 text: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit" + " " +
@@ -321,6 +334,23 @@ dodoApp.controller('dataSheet', function($scope) {
                     "expedita beatae cupiditate,maiores repudiandae, nostrum, reiciendis facere nemo!",
                 video: "https://www.youtube.com/embed/6TzRNpJdbQk",
                 game: $scope.games.animals,
+                image: {
+                    src: "//via.placeholder.com/1080x720",
+                    alt: "etkinlik resmi"
+                },
+            }
+        },
+        {
+            //Activity 
+            title: "Etkinlik: Türkiye Bölgeleri",
+            desc: "Bu içerikte  ... ",
+            content: {
+                title: "Türkiye Bölgeler",
+                text: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit" + " " +
+                    "Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia" + " " +
+                    "expedita beatae cupiditate,maiores repudiandae, nostrum, reiciendis facere nemo!",
+                video: "https://www.youtube.com/embed/6TzRNpJdbQk",
+                game: $scope.games.turkeymap,
                 image: {
                     src: "//via.placeholder.com/1080x720",
                     alt: "etkinlik resmi"
