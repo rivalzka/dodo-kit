@@ -7,9 +7,11 @@ var dodoApp = angular.module("dodoapp", ["ngSanitize"]);
 dodoApp.controller('dataSheet', function($scope) {
 
     $scope.initDodo = () => {
-        //     let root = document.documentElement;
-        //     root.style.setProperty('--intro-bg-img', "url(" + $scope.dodoBoardImageBackground.src + ")");
+        console.log("initialize");
+        // let root = document.querySelector('.intro')[1];
+        // root.style.setProperty('--intro-bg-img', "url(" + $scope.dodoBoardImageBackground.src + ")");
         //     console.log(root);
+        // "--intro-bg-img: url({{dodoBoardImageBackground.src}})"
     }
 
     /*
@@ -29,7 +31,7 @@ dodoApp.controller('dataSheet', function($scope) {
 
     /* home section image paths */
     /**https://tr.pinterest.com/pin/822821794398992113/ arkaplan  */
-    $scope.dodoBoardImageBackground = { src: "../assets/img/arkaplan2.jpg", alt: "dodo kart resim arkaplanı" };
+    // $scope.dodoBoardImageBackground = { src: "../assets/img/arkaplan2.jpg", alt: "dodo kart resim arkaplanı" };
     $scope.dodoBoardImage = { src: "//via.placeholder.com/1200x900", alt: "dodo kart resim" };
 
 
