@@ -52,7 +52,7 @@ dodoApp.controller('dataSheet', function($scope) {
     $scope.games = {
         pacman: {
             name: "Pacman",
-            src: "src/games/pacman/pacman.html",
+            src: "src/games/pacman/",
             controls: [
                 { html: "'BOŞLUK' : Oyunu baştan başlat", evt: 32 },
                 { html: "'P' : Oyunu durdur/oynat", evt: 80 },
@@ -65,7 +65,7 @@ dodoApp.controller('dataSheet', function($scope) {
         },
         dodobox: {
             name: "Dodo Box",
-            src: "src/games/dodobox/index.html",
+            src: "src/games/dodobox/",
             controls: [
                 { html: "'BOŞLUK' : Oyunu başlat", evt: 32 },
                 { html: "<i class='far fa-arrow-alt-circle-down'></i> : Aşağı Oklu Kutuyu Seç", evt: 40 },
@@ -77,7 +77,7 @@ dodoApp.controller('dataSheet', function($scope) {
         },
         rocket: {
             name: "Rocket",
-            src: "src/games/rocket/index.html",
+            src: "src/games/rocket/",
             controls: [
                 { html: "'BOŞLUK' : Işığı yak", evt: 32 },
                 { html: "<i class='far fa-arrow-alt-circle-up'></i> : İlerle", evt: 38 },
@@ -86,7 +86,7 @@ dodoApp.controller('dataSheet', function($scope) {
         },
         mario: {
             name: "Mario",
-            src: "src/games/mario/index.html",
+            src: "src/games/mario/",
             controls: [
                 { html: "<i class='far fa-arrow-alt-circle-right'></i> : İlerle", evt: 39 },
                 { html: "<i class='far fa-arrow-alt-circle-left'></i> : Geri gel", evt: 37 },
@@ -98,7 +98,7 @@ dodoApp.controller('dataSheet', function($scope) {
         },
         animals: {
             name: "Hayvanlar Alemi",
-            src: "src/games/animals/index.html",
+            src: "src/games/animals/",
             controls: [
                 { html: "<i class='far fa-arrow-alt-circle-down'></i> : Kedi", evt: 40 },
                 { html: "<i class='far fa-arrow-alt-circle-up'></i> : Köpek", evt: 38 },
@@ -108,7 +108,7 @@ dodoApp.controller('dataSheet', function($scope) {
         },
         drumkit: {
             name: "Bateri",
-            src: "src/games/drumkit/index.html",
+            src: "src/games/drumkit/",
             controls: [
                 { html: "'A' : Crash", evt: 65 },
                 { html: "<i class='far fa-arrow-alt-circle-left'></i> : Bass Tom", evt: 37 },
@@ -121,7 +121,7 @@ dodoApp.controller('dataSheet', function($scope) {
         },
         turkeymap: {
             name: "Türkiye Bölgeler",
-            src: "src/games/turkey/index.html",
+            src: "src/games/turkey/",
             controls: [
                 { html: "'W' : Karadeniz Bölgesi", evt: 87 },
                 { html: "'A' : Marmara Bölgesi", evt: 65 },
