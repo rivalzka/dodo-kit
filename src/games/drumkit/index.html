@@ -1509,6 +1509,7 @@
             thisKey = document.getElementById(thisKeyID);
             console.log("key: " + e.keyCode);
             animateKey(thisKey);
+            e.preventDefault();
             switch (e.keyCode) {
                 case 68: //d
                 case 100:

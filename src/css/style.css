@@ -648,7 +648,7 @@ ul.social-buttons li a:active {
 }
 
 .activity-modal .modal-content {
-    padding: 100px 0;
+    padding: 100px 0 20px 0;
     min-height: 100vh;
     border: 0;
     border-radius: 0;
