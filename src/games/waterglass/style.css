@@ -1,0 +1,205 @@
+/* game css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #EEE8C4;
+}
+
+
+/** DROPS **/
+
+.drops {
+    margin: 0 auto;
+    position: relative;
+    width: 400px;
+}
+
+.cont {
+    position: absolute;
+    height: 660px;
+    width: 400px;
+    top: -110px;
+    overflow: hidden;
+}
+
+.drops1 {
+    height: 400px;
+    position: absolute;
+    z-index: 1;
+    top: -280px;
+    /* animation: drops 10ws ease-out; */
+}
+
+.dropsanim {
+    animation: drops 10s ease-out;
+}
+
+.drops2 {
+    height: 400px;
+    position: absolute;
+    z-index: 1;
+    top: -280px;
+    /* animation: drops 10s 3s ease-out; */
+}
+
+.drops3 {
+    height: 400px;
+    position: absolute;
+    z-index: 1;
+    top: -280px;
+    /* animation: drops 10s 6s ease-out; */
+}
+
+
+/** CUP OF WATER **/
+
+.glass {
+    top: 150px;
+    height: 400px;
+    width: 400px;
+    overflow: hidden;
+    position: relative;
+    margin: 100px auto;
+    border-left: 10px solid;
+    border-right: 10px solid;
+    border-bottom: 10px solid;
+    border-radius: 20px 30px 40% 40%;
+    border-color: #636363;
+    background-color: #0C0D17;
+}
+
+
+/** WAVES **/
+
+.content {
+    position: relative;
+    top: 10px;
+    transition: all 1.5s linear;
+    /* animation: filltheglass 10s linear; */
+    animation-fill-mode: forward;
+}
+
+.water {
+    /* top: 0px; */
+    left: -300px;
+    position: absolute;
+    width: 1000px;
+    height: 200px;
+    background-color: #A7E5F5;
+    border-radius: 100% 0 100% 0px;
+    animation: waves 4s linear infinite;
+    animation-direction: alternate;
+    transition: all 1.5s linear;
+}
+
+.water2 {
+    /* top: 0px; */
+    left: -300px;
+    position: absolute;
+    width: 1000px;
+    height: 200px;
+    background-color: #A7E5F5;
+    border-radius: 0px 100% 0px 100%;
+    animation: waves2 4s linear infinite;
+    animation-direction: alternate;
+    transition: all 1.5s linear;
+}
+
+.water3 {
+    /* top: -170px; */
+    left: -300px;
+    position: absolute;
+    width: 1000px;
+    height: 200px;
+    background-color: #0C0D17;
+    border-radius: 100% 100% 100% 100%;
+    /* animation: waves3 4s linear infinite; */
+    animation-direction: alternate;
+    transition: all 1.5s linear;
+}
+
+.water4 {
+    position: absolute;
+    background-color: #A7E5F5;
+    height: 1000px;
+    width: 1000px;
+    /* top: 100px; */
+    left: -300px;
+    transition: all 1.5s linear;
+}
+
+
+/** KEYFRAMES FOR WAVES **/
+
+@keyframes waves {
+    100% {
+        border-radius: 0px 100% 0px 100%;
+    }
+}
+
+@keyframes waves2 {
+    90% {
+        border-radius: 100% 0 100% 0px;
+    }
+    100% {
+        border-radius: 100% 0 100% 0px;
+    }
+}
+
+@keyframes waves3 {
+    40% {
+        top: -200px;
+    }
+    50% {
+        top: -200px;
+    }
+}
+
+@keyframes filltheglass {
+    /*bardak dolması*/
+    0% {
+        top: 400px;
+    }
+    10% {
+        top: 400px;
+    }
+    20% {
+        top: 250px;
+    }
+    40% {
+        top: 250px;
+    }
+    50% {
+        top: 125px;
+    }
+    70% {
+        top: 125px;
+    }
+    80% {
+        top: 25px;
+    }
+    100% {}
+}
+
+@keyframes drops {
+    /* su damlacık düşmesi*/
+    0% {
+        opacity: 1;
+        top: -280px;
+    }
+    20% {
+        top: 700px;
+    }
+    99% {
+        top: 700px;
+    }
+    100% {
+        top: 700px;
+        opacity: 0;
+    }
+}

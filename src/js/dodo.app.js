@@ -134,6 +134,16 @@ dodoApp.controller('dataSheet', function($scope) {
                 { html: "'BOSLUK' : İç Anadolu Bölgesi", evt: 32 },
             ]
         },
+        waterglass: {
+            name: "Su Bardağı",
+            src: "src/games/waterglass/",
+            controls: [
+                { html: "'W' : Yeniden Başlat", evt: 87 },
+                { html: "'A' : 1. Seviye Doldur", evt: 65 },
+                { html: "'S' : 2. Seviye Doldur", evt: 83 },
+                { html: "'D' : 3. Seviye Doldur", evt: 68 },
+            ]
+        },
     };
 
 
@@ -369,6 +379,24 @@ dodoApp.controller('dataSheet', function($scope) {
                 },
             }
         },
+        {
+            //Activity 
+            title: "Etkinlik: Su Bardağı",
+            desc: "Bu içerikte  ... ",
+            content: {
+                title: "Su Bardağı",
+                text: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit" + " " +
+                    "Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia" + " " +
+                    "expedita beatae cupiditate,maiores repudiandae, nostrum, reiciendis facere nemo!",
+                video: "https://www.youtube.com/embed/6TzRNpJdbQk",
+                game: $scope.games.waterglass,
+                image: {
+                    src: "//via.placeholder.com/1080x720",
+                    alt: "etkinlik resmi"
+                },
+            }
+        },
+
 
     ];
 
