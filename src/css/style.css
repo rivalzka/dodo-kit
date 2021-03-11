@@ -644,6 +644,9 @@ ul.social-buttons li a:active {
 .activity-modal {
     background-color: var(--modal-bg-color);
     color: var(--modal-fg-color);
+    --border-color: var(--clr-gold);
+    width: calc(100% - 20px);
+    margin: 10px 10px 10px 10px;
 }
 
 .activity-modal .container {
