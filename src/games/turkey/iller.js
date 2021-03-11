@@ -1,4 +1,4 @@
-var iller = [
+var iller = {
     "adana": {
         "il": {
             "plaka": 1,
@@ -9118,19 +9118,41 @@ var iller = [
             "bilgi": "Gökçebey, Zonguldak ilinin ilçesidir. İlçenin toplam nüfusu 25.588 olup bunun 7.300'ü kentte bulunmaktadır."
         }
     }
-];
+};
 
 var BOLGELER = {
-    MARMARA: {},
-    KARADENIZ: {},
-    ICANADOLU: {},
-    DOGUANADOLU = {},
-    GUNEYDOGU = {},
-    EGE: {},
-    AKDENIZ = {}
+    'MARMARA': [],
+    'KARADENIZ': [],
+    'ICANADOLU': [],
+    'DOGUANADOLU': [],
+    'GUNEYDOGU': [],
+    'EGE': [],
+    'AKDENIZ': []
 
 };
 
-function init() {
+function initTurkey() {
+    for (var il in iller) {
+        console.log(il, " ", iller[il].il.bolge)
+        var bolge = iller[il].il.bolge,
+            iladi = iller[il].il['belediye-ismi'].replace(' BÜYÜKŞEHİR', '');
 
+        if (bolge.startsWith("İÇ")) {
+            BOLGELER.ICANADOLU.push(iladi);
+        } else if (bolge.startsWith("DO")) {
+            BOLGELER.DOGUANADOLU.push(iladi);
+        } else if (bolge.startsWith("MA")) {
+            BOLGELER.MARMARA.push(iladi);
+        } else if (bolge.startsWith("GÜ")) {
+            BOLGELER.GUNEYDOGU.push(iladi);
+        } else if (bolge.startsWith("KA")) {
+            BOLGELER.KARADENIZ.push(iladi);
+        } else if (bolge.startsWith("AK")) {
+            BOLGELER.AKDENIZ.push(iladi);
+        } else if (bolge.startsWith("EG")) {
+            BOLGELER.EGE.push(iladi);
+        }
+    }
+    console.log(JSON.stringify(BOLGELER));
 }
+initTurkey();
