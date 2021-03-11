@@ -8,6 +8,9 @@
 
 body {
     background-color: #EEE8C4;
+    max-height: 100vh;
+    max-width: 100vw;
+    overflow: hidden;
 }
 
 
@@ -16,22 +19,22 @@ body {
 .drops {
     margin: 0 auto;
     position: relative;
-    width: 400px;
+    width: 40vmin;
 }
 
 .cont {
     position: absolute;
-    height: 660px;
-    width: 400px;
-    top: -110px;
+    height: calc(50vh);
+    width: 40vmin;
+    top: -10vmin;
     overflow: hidden;
 }
 
 .drops1 {
-    height: 400px;
+    height: 40vmin;
     position: absolute;
     z-index: 1;
-    top: -280px;
+    top: -28vmin;
     /* animation: drops 10ws ease-out; */
 }
 
@@ -40,18 +43,18 @@ body {
 }
 
 .drops2 {
-    height: 400px;
+    height: 40vmin;
     position: absolute;
     z-index: 1;
-    top: -280px;
+    top: -28vmin;
     /* animation: drops 10s 3s ease-out; */
 }
 
 .drops3 {
-    height: 400px;
+    height: 40vmin;
     position: absolute;
     z-index: 1;
-    top: -280px;
+    top: -28vmin;
     /* animation: drops 10s 6s ease-out; */
 }
 
@@ -59,16 +62,16 @@ body {
 /** CUP OF WATER **/
 
 .glass {
-    top: 150px;
-    height: 400px;
-    width: 400px;
+    top: calc(50vh - 40vmin);
+    height: 40vmin;
+    width: 40vmin;
     overflow: hidden;
     position: relative;
-    margin: 100px auto;
-    border-left: 10px solid;
-    border-right: 10px solid;
-    border-bottom: 10px solid;
-    border-radius: 20px 30px 40% 40%;
+    margin: 10vmin auto;
+    border-left: 1vmin solid;
+    border-right: 1vmin solid;
+    border-bottom: 1vmin solid;
+    border-radius: 2vmin 3vmin 40% 40%;
     border-color: #636363;
     background-color: #0C0D17;
 }
@@ -78,7 +81,7 @@ body {
 
 .content {
     position: relative;
-    top: 10px;
+    top: 1vmin;
     transition: all 1.5s linear;
     /* animation: filltheglass 10s linear; */
     animation-fill-mode: forward;
@@ -86,10 +89,10 @@ body {
 
 .water {
     /* top: 0px; */
-    left: -300px;
+    left: -30vmin;
     position: absolute;
-    width: 1000px;
-    height: 200px;
+    width: 100vmin;
+    height: 20vmin;
     background-color: #A7E5F5;
     border-radius: 100% 0 100% 0px;
     animation: waves 4s linear infinite;
@@ -99,10 +102,10 @@ body {
 
 .water2 {
     /* top: 0px; */
-    left: -300px;
+    left: -30vmin;
     position: absolute;
-    width: 1000px;
-    height: 200px;
+    width: 100vmin;
+    height: 20vmin;
     background-color: #A7E5F5;
     border-radius: 0px 100% 0px 100%;
     animation: waves2 4s linear infinite;
@@ -112,10 +115,10 @@ body {
 
 .water3 {
     /* top: -170px; */
-    left: -300px;
+    left: -30vmin;
     position: absolute;
-    width: 1000px;
-    height: 200px;
+    width: 100vmin;
+    height: 20vmin;
     background-color: #0C0D17;
     border-radius: 100% 100% 100% 100%;
     /* animation: waves3 4s linear infinite; */
@@ -126,11 +129,24 @@ body {
 .water4 {
     position: absolute;
     background-color: #A7E5F5;
-    height: 1000px;
-    width: 1000px;
+    height: 100vmin;
+    width: 100vmin;
     /* top: 100px; */
-    left: -300px;
+    left: -30vmin;
     transition: all 1.5s linear;
+}
+
+.back-table {
+    position: absolute;
+    width: 100vmin;
+    left: calc(50vw - 50vmin);
+    top: calc(50vh - 12vmin);
+    z-index: -1;
+}
+
+.back-table img {
+    width: 100%;
+    height: auto;
 }
 
 
@@ -153,35 +169,35 @@ body {
 
 @keyframes waves3 {
     40% {
-        top: -200px;
+        top: -20vmin;
     }
     50% {
-        top: -200px;
+        top: -20vmin;
     }
 }
 
 @keyframes filltheglass {
     /*bardak dolması*/
     0% {
-        top: 400px;
+        top: 40vmin;
     }
     10% {
-        top: 400px;
+        top: 40vmin;
     }
     20% {
-        top: 250px;
+        top: 25vmin;
     }
     40% {
-        top: 250px;
+        top: 25vmin;
     }
     50% {
-        top: 125px;
+        top: 12.5vmin;
     }
     70% {
-        top: 125px;
+        top: 12.5vmin;
     }
     80% {
-        top: 25px;
+        top: 2.5vmin;
     }
     100% {}
 }
@@ -190,16 +206,16 @@ body {
     /* su damlacık düşmesi*/
     0% {
         opacity: 1;
-        top: -280px;
+        top: -28vmin;
     }
     20% {
-        top: 700px;
+        top: calc(50vh + 20vmin);
     }
     99% {
-        top: 700px;
+        top: calc(50vh + 20vmin);
     }
     100% {
-        top: 700px;
+        top: calc(50vh + 20vmin);
         opacity: 0;
     }
 }
