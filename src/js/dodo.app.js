@@ -269,7 +269,7 @@ dodoApp.controller('dataSheet', function($scope) {
                 text: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit" + " " +
                     "Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia" + " " +
                     "expedita beatae cupiditate,maiores repudiandae, nostrum, reiciendis facere nemo!",
-                video: "https://www.youtube.com/embed/6TzRNpJdbQk",
+                video: "https://www.youtube.com/embed/3PSYLiSdmY8",
                 game: $scope.games.pacman,
                 image: {
                     src: "//via.placeholder.com/1080x720",
@@ -286,7 +286,7 @@ dodoApp.controller('dataSheet', function($scope) {
                 text: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit" + " " +
                     "Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia" + " " +
                     "expedita beatae cupiditate,maiores repudiandae, nostrum, reiciendis facere nemo!",
-                video: "https://www.youtube.com/embed/6TzRNpJdbQk",
+                video: "https://www.youtube.com/embed/3PSYLiSdmY8",
                 game: $scope.games.dodobox,
                 image: {
                     src: "//via.placeholder.com/1080x720",
@@ -303,7 +303,7 @@ dodoApp.controller('dataSheet', function($scope) {
                 text: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit" + " " +
                     "Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia" + " " +
                     "expedita beatae cupiditate,maiores repudiandae, nostrum, reiciendis facere nemo!",
-                video: "https://www.youtube.com/embed/6TzRNpJdbQk",
+                video: "https://www.youtube.com/embed/3PSYLiSdmY8",
                 game: $scope.games.rocket,
                 image: {
                     src: "//via.placeholder.com/1080x720",
@@ -320,7 +320,7 @@ dodoApp.controller('dataSheet', function($scope) {
                 text: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit" + " " +
                     "Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia" + " " +
                     "expedita beatae cupiditate,maiores repudiandae, nostrum, reiciendis facere nemo!",
-                video: "https://www.youtube.com/embed/6TzRNpJdbQk",
+                video: "https://www.youtube.com/embed/3PSYLiSdmY8",
                 game: $scope.games.mario,
                 image: {
                     src: "//via.placeholder.com/1080x720",
@@ -337,7 +337,7 @@ dodoApp.controller('dataSheet', function($scope) {
                 text: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit" + " " +
                     "Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia" + " " +
                     "expedita beatae cupiditate,maiores repudiandae, nostrum, reiciendis facere nemo!",
-                video: "https://www.youtube.com/embed/6TzRNpJdbQk",
+                video: "https://www.youtube.com/embed/3PSYLiSdmY8",
                 game: $scope.games.drumkit,
                 image: {
                     src: "//via.placeholder.com/1080x720",
@@ -354,7 +354,7 @@ dodoApp.controller('dataSheet', function($scope) {
                 text: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit" + " " +
                     "Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia" + " " +
                     "expedita beatae cupiditate,maiores repudiandae, nostrum, reiciendis facere nemo!",
-                video: "https://www.youtube.com/embed/6TzRNpJdbQk",
+                video: "https://www.youtube.com/embed/3PSYLiSdmY8",
                 game: $scope.games.animals,
                 image: {
                     src: "//via.placeholder.com/1080x720",
@@ -371,7 +371,7 @@ dodoApp.controller('dataSheet', function($scope) {
                 text: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit" + " " +
                     "Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia" + " " +
                     "expedita beatae cupiditate,maiores repudiandae, nostrum, reiciendis facere nemo!",
-                video: "https://www.youtube.com/embed/6TzRNpJdbQk",
+                video: "https://www.youtube.com/embed/3PSYLiSdmY8",
                 game: $scope.games.turkeymap,
                 image: {
                     src: "//via.placeholder.com/1080x720",
@@ -388,7 +388,7 @@ dodoApp.controller('dataSheet', function($scope) {
                 text: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit" + " " +
                     "Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia" + " " +
                     "expedita beatae cupiditate,maiores repudiandae, nostrum, reiciendis facere nemo!",
-                video: "https://www.youtube.com/embed/6TzRNpJdbQk",
+                video: "https://www.youtube.com/embed/3PSYLiSdmY8",
                 game: $scope.games.waterglass,
                 image: {
                     src: "//via.placeholder.com/1080x720",
