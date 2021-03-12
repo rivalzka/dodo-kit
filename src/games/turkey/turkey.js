@@ -70,7 +70,7 @@ function setText(text) {
 
 function clearText() {
     document.getElementById("movetxt").classList.remove("anim");
-    document.getElementById('movetxt').innerHTML = "TÜRKİYE BÖLGELER";
+    document.getElementById('movetxt').innerHTML = "TÜRKİYE HARİTA";
 }
 key_init();
 keyList.w.f_down = () => {
