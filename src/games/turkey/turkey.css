@@ -1,0 +1,137 @@
+body {
+    background-color: #726f6f;
+    overflow: hidden;
+    padding-top: calc(50vh - 30vmin);
+}
+
+.haritaGenel {
+    width: 100vmin;
+    margin: 0px auto;
+    position: relative;
+    background-color: inherit;
+}
+
+.haritaGenel svg {
+    width: 100%;
+    height: auto
+}
+
+.haritaGenel path {
+    cursor: pointer;
+    fill: #FFFFFF;
+}
+
+.haritaGenel g:hover path {
+    fill: rgb(145, 180, 15)
+}
+
+.haritaGenel g:hover[data-bolgeadi="İç Anadolu Bölgesi"] path {
+    fill: rgb(175, 120, 0)
+}
+
+.haritaGenel.icanadolu [data-bolgeadi="İç Anadolu Bölgesi"] path {
+    fill: rgb(175, 120, 0)
+}
+
+.haritaGenel g:hover[data-bolgeadi="Akdeniz Bölgesi"] path {
+    fill: rgb(237, 253, 7)
+}
+
+.haritaGenel.akdeniz [data-bolgeadi="Akdeniz Bölgesi"] path {
+    fill: rgb(237, 253, 7)
+}
+
+.haritaGenel g:hover[data-bolgeadi="Ege Bölgesi"] path {
+    fill: rgb(18, 1, 95)
+}
+
+.haritaGenel.ege [data-bolgeadi="Ege Bölgesi"] path {
+    fill: rgb(18, 1, 95)
+}
+
+.haritaGenel g:hover[data-bolgeadi="Karadeniz Bölgesi"] path {
+    fill: rgb(14, 90, 11)
+}
+
+.haritaGenel.karadeniz [data-bolgeadi="Karadeniz Bölgesi"] path {
+    fill: rgb(14, 90, 11)
+}
+
+.haritaGenel g:hover[data-bolgeadi="Güneydoğu Anadolu Bölgesi"] path {
+    fill: rgb(0, 94, 110)
+}
+
+.haritaGenel.guneydogu [data-bolgeadi="Güneydoğu Anadolu Bölgesi"] path {
+    fill: rgb(0, 94, 110)
+}
+
+.haritaGenel g:hover[data-bolgeadi="Doğu Anadolu Bölgesi"] path {
+    fill: rgb(114, 4, 4)
+}
+
+.haritaGenel.doguanadolu [data-bolgeadi="Doğu Anadolu Bölgesi"] path {
+    fill: rgb(114, 4, 4)
+}
+
+.haritaGenel g:hover[data-bolgeadi="Marmara Bölgesi"] path {
+    fill: rgb(175, 0, 82)
+}
+
+.haritaGenel.marmara [data-bolgeadi="Marmara Bölgesi"] path {
+    fill: rgb(175, 0, 82)
+}
+
+.landscape {
+    width: 100vmin;
+    height: 25vmin;
+    margin: 0px auto;
+    position: relative;
+    /* top:; */
+    top: -10vmin;
+    background-color: transparent;
+    background-image: url("assets/turkey.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#movetxt {
+    position: absolute;
+    top: 1vmin;
+    width: auto;
+    left: calc(50vw - 25vmin);
+    --end-point: calc(50vw - 50vmin);
+    --end-time: 5s;
+    color: white;
+    font-size: 5vmin;
+    height: 6.5vmin;
+    overflow-y: hidden;
+    white-space: nowrap;
+    font-family: Tahoma, Geneva, sans-serif;
+    min-width: 50vmin;
+    text-align: center;
+}
+
+#movetxt.anim {
+    -webkit-animation: moving var(--end-time) infinite linear;
+    animation: moving var(--end-time) infinite linear;
+}
+
+@keyframes moving {
+    from {
+        transform: translateX(calc(50vw + 25vmin));
+    }
+    to {
+        transform: translateX(var(--end-point));
+    }
+}
+
+path {
+    fill: none;
+    stroke: rgb(0, 0, 0);
+    pointer-events: all;
+    transition: all ease 0.3s;
+}
+
+svg path:hover {
+    stroke: rgb(255, 255, 255);
+}
